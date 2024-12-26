@@ -18,7 +18,7 @@ importers:
         specifier: ^0.1.20
         version: 0.1.20
       drizzle-orm:
-        specifier: ^0.38.2
+        specifier: ^0.38.3
         version: 0.38.3(@types/react@19.0.2)(kysely@0.27.5)(postgres@3.4.5)(react@19.0.0)
       next:
         specifier: 15.1.2
@@ -52,10 +52,10 @@ importers:
         specifier: ^22.10.2
         version: 22.10.2
       '@types/react':
-        specifier: ^19
+        specifier: ^19.0.2
         version: 19.0.2
       '@types/react-dom':
-        specifier: ^19
+        specifier: ^19.0.2
         version: 19.0.2(@types/react@19.0.2)
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.18.2
@@ -73,7 +73,7 @@ importers:
         specifier: ^0.30.1
         version: 0.30.1
       eslint:
-        specifier: ^9
+        specifier: ^9.17.0
         version: 9.17.0(jiti@1.21.7)
       eslint-config-next:
         specifier: 15.1.2
@@ -85,7 +85,7 @@ importers:
         specifier: ^7.1.0
         version: 7.1.0
       postcss:
-        specifier: ^8
+        specifier: ^8.4.49
         version: 8.4.49
       prettier:
         specifier: ^3.4.2

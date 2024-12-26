@@ -105,7 +105,8 @@ type GetRouteBuilder<
 type DeleteRouteBuilder<
   Params extends z.ZodSchema,
   Search extends z.ZodSchema,
-> = CoreRouteElements<Params, z.ZodSchema> & ((
+> = CoreRouteElements<Params, z.ZodSchema> &
+  ((
     p?: z.input<Params>,
     search?: z.input<Search>,
     options?: FetchOptions,
