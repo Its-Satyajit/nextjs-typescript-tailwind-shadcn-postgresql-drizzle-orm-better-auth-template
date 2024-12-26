@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { z } from "zod";
 
 type ParsedData<T> = { error?: string; data?: T };
@@ -76,7 +80,7 @@ function parseShape(
           if (isPartOfUnion) return {};
           continue;
         }
-        const result = fieldSchema.safeParse(fieldData.data!);
+        const result = fieldSchema.safeParse(fieldData.data);
         if (result.success) parsed[key] = result.data;
       } else if (fieldSchema instanceof z.ZodDefault) {
         const result = fieldSchema.safeParse(undefined);

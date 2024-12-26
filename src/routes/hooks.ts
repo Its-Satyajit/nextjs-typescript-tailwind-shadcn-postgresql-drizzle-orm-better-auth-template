@@ -1,11 +1,15 @@
-import { useRouter } from "next/navigation";
+/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/unbound-method */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   useParams as useNextParams,
+  useRouter,
   useSearchParams as useNextSearchParams,
 } from "next/navigation";
 import { z } from "zod";
 
-import { RouteBuilder } from "./makeRoute";
+import { type RouteBuilder } from "./makeRoute";
 
 const emptySchema = z.object({});
 
@@ -61,7 +65,7 @@ function convertURLSearchParamsToObject(
   }
 
   const obj: Record<string, string | string[]> = {};
-  // @ts-ignore
+  
   for (const [key, value] of params.entries()) {
     if (params.getAll(key).length > 1) {
       obj[key] = params.getAll(key);

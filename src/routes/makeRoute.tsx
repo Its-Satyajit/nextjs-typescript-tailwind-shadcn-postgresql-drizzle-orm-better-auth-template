@@ -1,9 +1,13 @@
+import Link from "next/link";
+import queryString from "query-string";
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /*
 Derived from: https://www.flightcontrol.dev/blog/fix-nextjs-routing-to-have-full-type-safety
 */
 import { z } from "zod";
-import queryString from "query-string";
-import Link from "next/link";
 
 type LinkProps = Parameters<typeof Link>[0];
 
@@ -101,13 +105,11 @@ type GetRouteBuilder<
 type DeleteRouteBuilder<
   Params extends z.ZodSchema,
   Search extends z.ZodSchema,
-> = CoreRouteElements<Params, z.ZodSchema> & {
-  (
+> = CoreRouteElements<Params, z.ZodSchema> & ((
     p?: z.input<Params>,
     search?: z.input<Search>,
     options?: FetchOptions,
-  ): Promise<void>;
-};
+  ) => Promise<void>);
 
 export type RouteBuilder<
   Params extends z.ZodSchema,
@@ -147,8 +149,8 @@ function createPathBuilder<T extends Record<string, string | string[]>>(
 
   const elems: ((params: T) => string)[] = [];
   for (const elem of pathArr) {
-    const catchAll = elem.match(/\[\.\.\.(.*)\]/);
-    const param = elem.match(/\[(.*)\]/);
+    const catchAll = /\[\.\.\.(.*)\]/.exec(elem);
+    const param = /\[(.*)\]/.exec(elem);
     if (catchAll?.[1]) {
       const key = catchAll[1];
       elems.push((params: T) =>
@@ -182,7 +184,7 @@ function createRouteBuilder<
   const fn = createPathBuilder<z.output<Params>>(route);
 
   return (params?: z.input<Params>, search?: z.input<Search>) => {
-    let checkedParams = params || {};
+    let checkedParams = params ?? {};
     if (info.params) {
       const safeParams = info.params.safeParse(checkedParams);
       if (!safeParams?.success) {
@@ -194,7 +196,7 @@ function createRouteBuilder<
       }
     }
     const safeSearch = info.search
-      ? info.search?.safeParse(search || {})
+      ? info.search?.safeParse(search ?? {})
       : null;
     if (info.search && !safeSearch?.success) {
       throw new Error(
@@ -240,7 +242,7 @@ export function makePostRoute<
       method: "POST",
       body: JSON.stringify(safeBody.data),
       headers: {
-        ...(options?.headers || {}),
+        ...(options?.headers ?? {}),
         "Content-Type": "application/json",
       },
     })
@@ -303,7 +305,7 @@ export function makePutRoute<
       method: "PUT",
       body: JSON.stringify(safeBody.data),
       headers: {
-        ...(options?.headers || {}),
+        ...(options?.headers ?? {}),
         "Content-Type": "application/json",
       },
     })
@@ -398,7 +400,7 @@ export function makeDeleteRoute<
       ...options,
       method: "DELETE",
       headers: {
-        ...(options?.headers || {}),
+        ...(options?.headers ?? {}),
         "Content-Type": "application/json",
       },
     }).then((res) => {
