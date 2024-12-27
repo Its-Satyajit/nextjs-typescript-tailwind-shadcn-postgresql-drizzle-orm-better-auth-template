@@ -1,6 +1,6 @@
 import { z } from "zod";
 
 export const Route = {
-  name: "Signin",
+  name: "AuthResetPassword",
   params: z.object({}),
 };
