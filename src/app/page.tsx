@@ -1,17 +1,13 @@
 "use client";
 
-import {
-  signIn,
-  signOut,
-  signUp,
-  useSession,
-} from "@/lib/auth-client";
+import { signIn, signOut, signUp, useSession } from "@/lib/auth-client";
 
 export default function Home() {
   const { data, error, isPending } = useSession();
   return (
     <div className="flex flex-col gap-4">
-      <button type="button"
+      <button
+        type="button"
         onClick={async () => {
           await signIn.email({
             email: "satyajit.bhatt@gmail.com",
@@ -23,7 +19,8 @@ export default function Home() {
         signin
       </button>
 
-      <button type="button"
+      <button
+        type="button"
         onClick={async () => {
           await signUp.email({
             email: "satyajit.bhatt@gmail.com",
@@ -36,7 +33,8 @@ export default function Home() {
         signup
       </button>
 
-      <button type="button"
+      <button
+        type="button"
         onClick={async () => {
           await signOut();
         }}
