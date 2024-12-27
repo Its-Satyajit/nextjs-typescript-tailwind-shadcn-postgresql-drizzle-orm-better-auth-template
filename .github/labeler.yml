@@ -1,0 +1,71 @@
+# Add 'backend' label to changes in backend-related files
+backend:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/lib/**'
+          - 'src/routes/**'
+          - 'src/types/**'
+          - 'src/env.ts'
+
+# Add 'frontend' label to changes in frontend-related files
+frontend:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/app/**'
+          - 'src/components/**'
+          - 'src/features/**'
+          - 'src/data/**'
+
+# Add 'utilities' label to changes in utility functions
+utilities:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/lib/utilities/**'
+
+# Add 'mock-data' label to changes in mock data
+mock-data:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/data/mock/**'
+
+# Add 'tests' label to changes in test files
+tests:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'tests/**'
+
+# Add 'documentation' label to changes in documentation files
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'docs/**'
+          - '**/*.md'
+
+# Add 'ci/cd' label to changes in CI/CD or GitHub workflow files
+ci/cd:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/workflows/**'
+
+# Add 'dependencies' label to changes in dependency files
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'package.json'
+          - 'package-lock.json'
+          - 'pnpm-lock.yaml'
+          - 'yarn.lock'
+
+# Add 'environment' label to changes in environment configuration
+environment:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/env.ts'
+
+# Add 'configuration' label to changes in configuration files
+configuration:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.eslintrc.js'
+          - '.prettierrc'
+          - 'tsconfig.json'
