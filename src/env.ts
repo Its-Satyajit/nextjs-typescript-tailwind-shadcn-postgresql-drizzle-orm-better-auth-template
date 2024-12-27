@@ -9,9 +9,18 @@ const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
-    DATABASE_URL: z.string(),
+    DATABETTER_AUTH_URL: z.string(),
     BETTER_AUTH_SECRET: z.string(),
-    BASE_URL: z.string(),
+    BETTER_AUTH_URL: z.string(),
+
+    MAIL_HOST: z.string(),
+    MAIL_USERNAME: z.string(),
+    MAIL_PASSWORD: z.string(),
+    MAIL_FROM: z.string().email(),
+
+    GITHUB_CLIENT_ID: z.string(),
+    GITHUB_CLIENT_SECRET: z.string(),
+    EMAIL_VERIFICATION_CALLBACK_URL: z.string(),
   },
 
   /**
@@ -20,7 +29,7 @@ const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    NEXT_PUBLIC_BASE_URL: z.string(),
+    NEXT_PUBLIC_BETTER_AUTH_URL: z.string(),
   },
 
   /**
@@ -29,10 +38,20 @@ const env = createEnv({
    */
   runtimeEnv: {
     BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
-    DATABASE_URL: process.env.DATABASE_URL,
+    DATABETTER_AUTH_URL: process.env.DATABETTER_AUTH_URL,
     NODE_ENV: process.env.NODE_ENV,
-    BASE_URL: process.env.BASE_URL,
-    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
+    BETTER_AUTH_URL: process.env.BETTER_AUTH_URL,
+    NEXT_PUBLIC_BETTER_AUTH_URL: process.env.NEXT_PUBLIC_BETTER_AUTH_URL,
+
+    GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
+    GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
+    EMAIL_VERIFICATION_CALLBACK_URL:
+      process.env.EMAIL_VERIFICATION_CALLBACK_URL,
+
+    MAIL_HOST: process.env.MAIL_HOST,
+    MAIL_USERNAME: process.env.MAIL_USERNAME,
+    MAIL_PASSWORD: process.env.MAIL_PASSWORD,
+    MAIL_FROM: process.env.MAIL_FROM,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
