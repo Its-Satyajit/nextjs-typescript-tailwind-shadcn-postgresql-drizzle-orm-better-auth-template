@@ -20,11 +20,10 @@ export const signUpSchema = object({
   email: getEmailSchema(),
   password: getPasswordSchema("password"),
   confirmPassword: getPasswordSchema("confirmPassword"),
-})
-  .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
-    path: ["confirmPassword"],
-  });
+}).refine((data) => data.password === data.confirmPassword, {
+  message: "Passwords don't match",
+  path: ["confirmPassword"],
+});
 
 export const signInSchema = object({
   email: getEmailSchema(),
@@ -38,8 +37,7 @@ export const forgotPasswordSchema = object({
 export const resetPasswordSchema = object({
   password: getPasswordSchema("password"),
   confirmPassword: getPasswordSchema("confirmPassword"),
-})
-  .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
-    path: ["confirmPassword"],
-  });
+}).refine((data) => data.password === data.confirmPassword, {
+  message: "Passwords don't match",
+  path: ["confirmPassword"],
+});

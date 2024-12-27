@@ -8,12 +8,7 @@ import { type z } from "zod";
 
 import { Button } from "@/components/ui/button";
 // import LoadingButton from "@/components/loading-button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -136,9 +131,7 @@ export default function SignIn() {
                   )}
                 />
               ))}
-              <Button >
-                Sign in
-              </Button>
+              <Button>Sign in</Button>
             </form>
           </Form>
           <div className="mt-4">
