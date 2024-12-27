@@ -3,48 +3,47 @@ import { z } from "zod";
 import { makeRoute } from "./makeRoute";
 
 const defaultInfo = {
-  search: z.object({})
+  search: z.object({}),
 };
 
 import * as HomeRoute from "@/app/page.info";
-import * as SigninRoute from "@/app/(auth)/signin/page.info";
-import * as SignupRoute from "@/app/(auth)/signup/page.info";
+import * as AuthEmailVerifiedRoute from "@/app/(auth)/email-verified/page.info";
+import * as AuthForgotPasswordRoute from "@/app/(auth)/forgot-password/page.info";
+import * as AuthResetPasswordRoute from "@/app/(auth)/reset-password/page.info";
+import * as AuthSignInRoute from "@/app/(auth)/sign-in/page.info";
+import * as AuthSignUpRoute from "@/app/(auth)/sign-up/page.info";
 import * as ApiAuthAllRoute from "@/app/api/auth/[...all]/route.info";
 import * as DashboardRoute from "@/app/dashboard/page.info";
 
-export const Home = makeRoute(
-  "/",
-  {
-    ...defaultInfo,
-    ...HomeRoute.Route
-  }
-);
-export const Signin = makeRoute(
-  "/(auth)/signin",
-  {
-    ...defaultInfo,
-    ...SigninRoute.Route
-  }
-);
-export const Signup = makeRoute(
-  "/(auth)/signup",
-  {
-    ...defaultInfo,
-    ...SignupRoute.Route
-  }
-);
-export const ApiAuthAll = makeRoute(
-  "/api/auth/[...all]",
-  {
-    ...defaultInfo,
-    ...ApiAuthAllRoute.Route
-  }
-);
-export const Dashboard = makeRoute(
-  "/dashboard",
-  {
-    ...defaultInfo,
-    ...DashboardRoute.Route
-  }
-);
-
+export const Home = makeRoute("/", {
+  ...defaultInfo,
+  ...HomeRoute.Route,
+});
+export const AuthEmailVerified = makeRoute("/(auth)/email-verified", {
+  ...defaultInfo,
+  ...AuthEmailVerifiedRoute.Route,
+});
+export const AuthForgotPassword = makeRoute("/(auth)/forgot-password", {
+  ...defaultInfo,
+  ...AuthForgotPasswordRoute.Route,
+});
+export const AuthResetPassword = makeRoute("/(auth)/reset-password", {
+  ...defaultInfo,
+  ...AuthResetPasswordRoute.Route,
+});
+export const AuthSignIn = makeRoute("/(auth)/sign-in", {
+  ...defaultInfo,
+  ...AuthSignInRoute.Route,
+});
+export const AuthSignUp = makeRoute("/(auth)/sign-up", {
+  ...defaultInfo,
+  ...AuthSignUpRoute.Route,
+});
+export const ApiAuthAll = makeRoute("/api/auth/[...all]", {
+  ...defaultInfo,
+  ...ApiAuthAllRoute.Route,
+});
+export const Dashboard = makeRoute("/dashboard", {
+  ...defaultInfo,
+  ...DashboardRoute.Route,
+});
