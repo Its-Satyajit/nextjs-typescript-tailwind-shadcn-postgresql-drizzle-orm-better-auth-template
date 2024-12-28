@@ -25,26 +25,25 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 22
-          cache: 'npm'
 
       - name: Cache global npm packages
         uses: actions/cache@v3
-        id: cache-npm-global
+        id: cache-cspell
         with:
           path: ~/.npm-global
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-cspell
+          key: ${{ runner.os }}-cspell-${{ hashFiles('**/cspell.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-cspell-
 
       - name: Configure npm global path
-        if: steps.cache-npm-global.outputs.cache-hit != 'true'
+        if: steps.cache-cspell.outputs.cache-hit != 'true'
         run: |
           mkdir -p ~/.npm-global
           npm config set prefix '~/.npm-global'
           echo "~/.npm-global/bin" >> $GITHUB_PATH
 
       - name: Install cspell
-        if: steps.cache-npm-global.outputs.cache-hit != 'true'
+        if: steps.cache-cspell.outputs.cache-hit != 'true'
         run: npm install -g cspell
 
       - name: Get changed files
