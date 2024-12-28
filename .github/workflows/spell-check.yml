@@ -1,41 +1,25 @@
-name: Spell Check
-
-permissions:
-  pull-requests: write  # Allows creating/updating PR comments
-  contents: read       # Allows reading repository contents
-
-on:
-  pull_request:
-  push:
-    branches: [dev, main]
-
+---
 jobs:
   spell-check:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    if: github.event_name == 'pull_request'  # Only run on pull requests
-
     steps:
       - name: Check out the code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 22
-
       - name: Install cspell
         run: npm install -g cspell
-
-      - name: Get changed files
-        id: changed-files
+      - id: changed-files
+        name: Get changed files
         run: |
-          echo "files=$(git diff --name-only --diff-filter=ACMRT origin/${{ github.base_ref }} HEAD | grep -E '\.(php|blade\.php|md|yml|yaml|json|js|jsx|ts|tsx|css|scss|vue)$' | tr '\n' ' ')" >> $GITHUB_OUTPUT
-
-      - name: Run cspell on changed files
-        id: spell-check
+          echo "files=$(git diff --name-only --diff-filter=ACMRT origin/${{ github.base_ref }} HEAD | grep -E '\.(php|blade\.php|md|yml|yaml|json|js|jsx|ts|tsx|css|scss|vue)
+      - id: spell-check
+        name: Run cspell on changed files
         run: |
           if [ -z "${{ steps.changed-files.outputs.files }}" ]; then
             echo "No files to check"
@@ -52,21 +36,152 @@ jobs:
             spell_check_errors=false
           fi
           spell_check_output="${spell_check_output//'%'/'%25'}"
-          spell_check_output="${spell_check_output//$'\r'/'%0D'}"
-          spell_check_output="${spell_check_output//$'\n'/'%0A'}"
-          echo "spell_check_result=$spell_check_output" >> $GITHUB_OUTPUT
-          echo "spell_check_errors=$spell_check_errors" >> $GITHUB_OUTPUT
-
-      - name: Post Spell Check Results
-        if: always()
+          spell_check_output="${spell_check_output//
+      - if: always()
+        name: Post Spell Check Results
         uses: thollander/actions-comment-pull-request@v3
         with:
+          comment-tag: spell-check-result
+          create-if-not-exists: true
+          github-token: ${{ secrets.GH }}
           message: |
             ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '**📝 Spell Check Results:**%0A%0A'}}
             ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '```plaintext%0A' || '🎉 **No spelling errors found in the changed files!**'}}
             ${{ steps.spell-check.outputs.spell_check_result }}
             ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '%0A```' || '' }}
-          github-token: ${{ secrets.GH }}
-          comment-tag: spell-check-result
           mode: upsert
+    timeout-minutes: 15
+name: Spell Check
+'on':
+  pull_request: null
+  push:
+    branches: [dev, main]
+permissions:
+  contents: read
+  pull-requests: write | tr '\n' ' ')" >> $GITHUB_OUTPUT
+
+      - id: spell-check
+        name: Run cspell on changed files
+        run: vscode-yaml-sort.block.1
+      - if: always()
+        name: Post Spell Check Results
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          comment-tag: spell-check-result
           create-if-not-exists: true
+          github-token: ${{ secrets.GH }}
+          message: |
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '**📝 Spell Check Results:**%0A%0A'}}
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '```plaintext%0A' || '🎉 **No spelling errors found in the changed files!**'}}
+            ${{ steps.spell-check.outputs.spell_check_result }}
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '%0A```' || '' }}
+          mode: upsert
+    timeout-minutes: 15
+name: Spell Check
+'on':
+  pull_request: null
+  push:
+    branches: [dev, main]
+permissions:
+  contents: read
+  pull-requests: write\r'/'%0D'}"
+          spell_check_output="${spell_check_output//
+      - if: always()
+        name: Post Spell Check Results
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          comment-tag: spell-check-result
+          create-if-not-exists: true
+          github-token: ${{ secrets.GH }}
+          message: |
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '**📝 Spell Check Results:**%0A%0A'}}
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '```plaintext%0A' || '🎉 **No spelling errors found in the changed files!**'}}
+            ${{ steps.spell-check.outputs.spell_check_result }}
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '%0A```' || '' }}
+          mode: upsert
+    timeout-minutes: 15
+name: Spell Check
+'on':
+  pull_request: null
+  push:
+    branches: [dev, main]
+permissions:
+  contents: read
+  pull-requests: write | tr '\n' ' ')" >> $GITHUB_OUTPUT
+
+      - id: spell-check
+        name: Run cspell on changed files
+        run: vscode-yaml-sort.block.1
+      - if: always()
+        name: Post Spell Check Results
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          comment-tag: spell-check-result
+          create-if-not-exists: true
+          github-token: ${{ secrets.GH }}
+          message: |
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '**📝 Spell Check Results:**%0A%0A'}}
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '```plaintext%0A' || '🎉 **No spelling errors found in the changed files!**'}}
+            ${{ steps.spell-check.outputs.spell_check_result }}
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '%0A```' || '' }}
+          mode: upsert
+    timeout-minutes: 15
+name: Spell Check
+'on':
+  pull_request: null
+  push:
+    branches: [dev, main]
+permissions:
+  contents: read
+  pull-requests: write\n'/'%0A'}"
+          echo "spell_check_result=$spell_check_output" >> $GITHUB_OUTPUT
+          echo "spell_check_errors=$spell_check_errors" >> $GITHUB_OUTPUT
+
+      - if: always()
+        name: Post Spell Check Results
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          comment-tag: spell-check-result
+          create-if-not-exists: true
+          github-token: ${{ secrets.GH }}
+          message: |
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '**📝 Spell Check Results:**%0A%0A'}}
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '```plaintext%0A' || '🎉 **No spelling errors found in the changed files!**'}}
+            ${{ steps.spell-check.outputs.spell_check_result }}
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '%0A```' || '' }}
+          mode: upsert
+    timeout-minutes: 15
+name: Spell Check
+'on':
+  pull_request: null
+  push:
+    branches: [dev, main]
+permissions:
+  contents: read
+  pull-requests: write | tr '\n' ' ')" >> $GITHUB_OUTPUT
+
+      - id: spell-check
+        name: Run cspell on changed files
+        run: vscode-yaml-sort.block.1
+      - if: always()
+        name: Post Spell Check Results
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          comment-tag: spell-check-result
+          create-if-not-exists: true
+          github-token: ${{ secrets.GH }}
+          message: |
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '**📝 Spell Check Results:**%0A%0A'}}
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '```plaintext%0A' || '🎉 **No spelling errors found in the changed files!**'}}
+            ${{ steps.spell-check.outputs.spell_check_result }}
+            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '%0A```' || '' }}
+          mode: upsert
+    timeout-minutes: 15
+name: Spell Check
+'on':
+  pull_request: null
+  push:
+    branches: [dev, main]
+permissions:
+  contents: read
+  pull-requests: write
