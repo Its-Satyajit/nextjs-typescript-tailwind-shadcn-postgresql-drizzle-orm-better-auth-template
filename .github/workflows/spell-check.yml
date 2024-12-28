@@ -42,38 +42,49 @@ jobs:
             echo "spell_check_result=" >> $GITHUB_OUTPUT
             exit 0
           fi
+          
           echo "Checking spelling in changed files..."
           cspell --no-progress --config "cspell.json" ${{ steps.changed-files.outputs.files }} > cspell-output.txt || true
+          
           if [ -s cspell-output.txt ]; then
-            echo "## 📝 Spell Check Results" > results.md
-            echo "" >> results.md
-            echo "| File | Line | Error | Suggested Fix |" >> results.md
-            echo "|------|------|-------|---------------|" >> results.md
-            while IFS= read -r line; do
-              file=$(echo "$line" | cut -d: -f1)
-              line_number=$(echo "$line" | cut -d: -f2)
-              error=$(echo "$line" | cut -d: -f3 | awk '{$1=$1};1')
-              suggestion=$(echo "$error" | grep -oP '\((.*?)\)' | tr -d '()')
-              # Escape parentheses in the suggestion
-              suggestion=$(echo "$suggestion" | sed 's/(/\\(/g; s/)/\\)/g')
-              echo "| \`$file\` | $line_number | $error | $suggestion |" >> results.md
-            done < cspell-output.txt
+            # Create a properly formatted markdown table
+            {
+              echo "## 📝 Spell Check Results"
+              echo
+              echo "| File | Line | Error | Suggested Fix |"
+              echo "|------|------|-------|---------------|"
+              while IFS= read -r line; do
+                file=$(echo "$line" | cut -d: -f1)
+                line_number=$(echo "$line" | cut -d: -f2)
+                error=$(echo "$line" | cut -d: -f3- | sed 's/^[[:space:]]*//')
+                suggestion=$(echo "$error" | grep -oP 'Unknown word \(\K[^)]+')
+                
+                # Properly escape markdown special characters
+                file=$(echo "$file" | sed 's/|/\\|/g')
+                error=$(echo "$error" | sed 's/|/\\|/g')
+                suggestion=$(echo "$suggestion" | sed 's/|/\\|/g')
+                
+                echo "| \`$file\` | $line_number | $error | $suggestion |"
+              done < cspell-output.txt
+            } > results.md
+            
+            # Properly escape the content for GitHub Actions
             spell_check_result=$(cat results.md)
             spell_check_result="${spell_check_result//'%'/'%25'}"
             spell_check_result="${spell_check_result//$'\n'/'%0A'}"
             spell_check_result="${spell_check_result//$'\r'/'%0D'}"
-            echo "spell_check_result=$spell_check_result" >> $GITHUB_OUTPUT
+            echo "spell_check_result<<EOF" >> $GITHUB_OUTPUT
+            echo "$spell_check_result" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
           else
-            echo "spell_check_result=**🎉 No spelling errors found!**" >> $GITHUB_OUTPUT
-            exit 0
+            echo "spell_check_result=## 🎉 No spelling errors found!" >> $GITHUB_OUTPUT
           fi
 
       - name: Post Spell Check Results
-        if: always() && steps.spell-check.outputs.spell_check_result != 'No spelling errors found!'
+        if: always()
         uses: thollander/actions-comment-pull-request@v3
         with:
-          message: |
-            ${{ steps.spell-check.outputs.spell_check_result }}
+          message: ${{ steps.spell-check.outputs.spell_check_result }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           comment-tag: spell-check-result
           mode: upsert
