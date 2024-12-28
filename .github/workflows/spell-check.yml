@@ -45,7 +45,7 @@ jobs:
           echo "Checking spelling in changed files..."
           cspell --no-progress --config "cspell.json" ${{ steps.changed-files.outputs.files }} > cspell-output.txt || true
           if [ -s cspell-output.txt ]; then
-            echo "## 📝 Spell Check Results:" > results.md
+            echo "## 📝 Spell Check Results" > results.md
             echo "" >> results.md
             echo "| File | Line | Error | Suggested Fix |" >> results.md
             echo "|------|------|-------|---------------|" >> results.md
@@ -54,6 +54,8 @@ jobs:
               line_number=$(echo "$line" | cut -d: -f2)
               error=$(echo "$line" | cut -d: -f3 | awk '{$1=$1};1')
               suggestion=$(echo "$error" | grep -oP '\((.*?)\)' | tr -d '()')
+              # Escape parentheses in the suggestion
+              suggestion=$(echo "$suggestion" | sed 's/(/\\(/g; s/)/\\)/g')
               echo "| \`$file\` | $line_number | $error | $suggestion |" >> results.md
             done < cspell-output.txt
             spell_check_result=$(cat results.md)
