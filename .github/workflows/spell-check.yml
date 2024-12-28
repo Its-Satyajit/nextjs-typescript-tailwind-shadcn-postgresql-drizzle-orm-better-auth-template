@@ -1,8 +1,8 @@
 name: Spell Check
 
 permissions:
-  pull-requests: write  
-  contents: read        
+  pull-requests: write  # Allows creating/updating PR comments
+  contents: read        # Allows reading repository contents
 
 on:
   pull_request:
@@ -13,7 +13,7 @@ jobs:
   spell-check:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    if: github.event_name == 'pull_request'  
+    if: github.event_name == 'pull_request'  # Only run on pull requests
 
     steps:
       - name: Check out the code
@@ -21,17 +21,30 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run cspell
-        uses: streetsidesoftware/cspell-action@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          config: './cspell.json'  
-          incremental_files_only: true 
-          strict: false  
+          node-version: 22
 
-      - name: Format Spell Check Results
-        id: format-results
+      - name: Install cspell
+        run: npm install -g cspell
+
+      - name: Get changed files
+        id: changed-files
         run: |
-          if [ -s cspell-reports/cspell-output.txt ]; then
+          echo "files=$(git diff --name-only --diff-filter=ACMRT origin/${{ github.base_ref }} HEAD | grep -E '\.(php|blade\.php|md|yml|yaml|json|js|jsx|ts|tsx|css|scss|vue)$' | tr '\n' ' ')" >> $GITHUB_OUTPUT
+
+      - name: Run cspell on changed files
+        id: spell-check
+        run: |
+          if [ -z "${{ steps.changed-files.outputs.files }}" ]; then
+            echo "No files to check"
+            echo "spell_check_result=" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          echo "Checking spelling in changed files..."
+          cspell --no-progress --config "cspell.json" ${{ steps.changed-files.outputs.files }} > cspell-output.txt || true
+          if [ -s cspell-output.txt ]; then
             echo "## 📝 Spell Check Results:" > results.md
             echo "" >> results.md
             echo "| File | Line | Error | Suggested Fix |" >> results.md
@@ -42,18 +55,23 @@ jobs:
               error=$(echo "$line" | cut -d: -f3 | awk '{$1=$1};1')
               suggestion=$(echo "$error" | grep -oP '\((.*?)\)' | tr -d '()')
               echo "| \`$file\` | $line_number | $error | $suggestion |" >> results.md
-            done < cspell-reports/cspell-output.txt
-            cat results.md
-            echo "spell_check_result=$(cat results.md)" >> $GITHUB_OUTPUT
+            done < cspell-output.txt
+            spell_check_result=$(cat results.md)
+            spell_check_result="${spell_check_result//'%'/'%25'}"
+            spell_check_result="${spell_check_result//$'\n'/'%0A'}"
+            spell_check_result="${spell_check_result//$'\r'/'%0D'}"
+            echo "spell_check_result=$spell_check_result" >> $GITHUB_OUTPUT
           else
             echo "spell_check_result=**🎉 No spelling errors found!**" >> $GITHUB_OUTPUT
+            exit 0
           fi
 
       - name: Post Spell Check Results
-        if: always()
+        if: always() && steps.spell-check.outputs.spell_check_result != 'No spelling errors found!'
         uses: thollander/actions-comment-pull-request@v3
         with:
-          message: ${{ steps.format-results.outputs.spell_check_result }}
+          message: |
+            ${{ steps.spell-check.outputs.spell_check_result }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           comment-tag: spell-check-result
           mode: upsert
