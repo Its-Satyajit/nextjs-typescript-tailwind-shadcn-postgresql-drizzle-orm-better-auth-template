@@ -1,8 +1,8 @@
 name: Spell Check
 
 permissions:
-  pull-requests: write  # Allows creating/updating PR comments
-  contents: read       # Allows reading repository contents
+  pull-requests: write  
+  contents: read        
 
 on:
   pull_request:
@@ -13,7 +13,7 @@ jobs:
   spell-check:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    if: github.event_name == 'pull_request'  # Only run on pull requests
+    if: github.event_name == 'pull_request'  
 
     steps:
       - name: Check out the code
@@ -21,52 +21,40 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Run cspell
+        uses: streetsidesoftware/cspell-action@v1
         with:
-          node-version: 22
+          config: './cspell.json'  
+          incremental_files_only: true 
+          strict: false  
 
-      - name: Install cspell
-        run: npm install -g cspell
-
-      - name: Get changed files
-        id: changed-files
+      - name: Format Spell Check Results
+        id: format-results
         run: |
-          echo "files=$(git diff --name-only --diff-filter=ACMRT origin/${{ github.base_ref }} HEAD | grep -E '\.(php|blade\.php|md|yml|yaml|json|js|jsx|ts|tsx|css|scss|vue)$' | tr '\n' ' ')" >> $GITHUB_OUTPUT
-
-      - name: Run cspell on changed files
-        id: spell-check
-        run: |
-          if [ -z "${{ steps.changed-files.outputs.files }}" ]; then
-            echo "No files to check"
-            echo "spell_check_result=" >> $GITHUB_OUTPUT
-            echo "spell_check_errors=false" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          echo "Checking spelling in changed files..."
-          cspell --no-progress --config "cspell.json" ${{ steps.changed-files.outputs.files }} > spell_check_output.txt || true
-          spell_check_output=$(cat spell_check_output.txt)
-          if [ -s spell_check_output.txt ]; then
-            spell_check_errors=true
+          if [ -s cspell-reports/cspell-output.txt ]; then
+            echo "## 📝 Spell Check Results:" > results.md
+            echo "" >> results.md
+            echo "| File | Line | Error | Suggested Fix |" >> results.md
+            echo "|------|------|-------|---------------|" >> results.md
+            while IFS= read -r line; do
+              file=$(echo "$line" | cut -d: -f1)
+              line_number=$(echo "$line" | cut -d: -f2)
+              error=$(echo "$line" | cut -d: -f3 | awk '{$1=$1};1')
+              suggestion=$(echo "$error" | grep -oP '\((.*?)\)' | tr -d '()')
+              echo "| \`$file\` | $line_number | $error | $suggestion |" >> results.md
+            done < cspell-reports/cspell-output.txt
+            cat results.md
+            echo "spell_check_result=$(cat results.md)" >> $GITHUB_OUTPUT
           else
-            spell_check_errors=false
+            echo "spell_check_result=**🎉 No spelling errors found!**" >> $GITHUB_OUTPUT
           fi
-          spell_check_output="${spell_check_output//'%'/'%25'}"
-          spell_check_output="${spell_check_output//$'\r'/'%0D'}"
-          spell_check_output="${spell_check_output//$'\n'/'%0A'}"
-          echo "spell_check_result=$spell_check_output" >> $GITHUB_OUTPUT
-          echo "spell_check_errors=$spell_check_errors" >> $GITHUB_OUTPUT
 
       - name: Post Spell Check Results
         if: always()
         uses: thollander/actions-comment-pull-request@v3
         with:
-          message: |
-            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '**📝 Spell Check Results:**%0A%0A'}}
-            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '```plaintext%0A' || '🎉 **No spelling errors found in the changed files!**'}}
-            ${{ steps.spell-check.outputs.spell_check_result }}
-            ${{ steps.spell-check.outputs.spell_check_errors == 'true' && '%0A```' || '' }}
-          github-token: ${{ secrets.GH }}
+          message: ${{ steps.format-results.outputs.spell_check_result }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           comment-tag: spell-check-result
           mode: upsert
           create-if-not-exists: true
