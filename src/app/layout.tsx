@@ -7,7 +7,7 @@ import {
   RI,
 } from "@/styles/Fonts";
 
-// thisisaspellerror(anotherone)
+// thisisaspellerror(anotherone),(anotherone)
 
 export const metadata: Metadata = {
   title: "Create Next App",
