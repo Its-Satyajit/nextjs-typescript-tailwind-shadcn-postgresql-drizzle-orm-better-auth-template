@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 
-// import LoadingButton from "@/components/loading-button";
-import Link from "next/link";
 import { useForm } from "react-hook-form";
 import type { z } from "zod";
 
@@ -20,6 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { signUp } from "@/lib/auth-client";
+import { AuthSignIn } from "@/routes";
 import { signUpSchema } from "@/zod/zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -111,9 +110,9 @@ export default function SignUp() {
             </form>
           </Form>
           <div className="mt-4 text-center text-sm">
-            <Link href="/sign-in" className="text-primary hover:underline">
+            <AuthSignIn.Link className="text-primary hover:underline">
               Already have an account? Sign in
-            </Link>
+            </AuthSignIn.Link>
           </div>
         </CardContent>
       </Card>

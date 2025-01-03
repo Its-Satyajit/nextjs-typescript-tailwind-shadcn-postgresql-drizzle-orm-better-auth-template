@@ -1,10 +1,9 @@
 "use client";
 
 import { GithubIcon } from "lucide-react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { type z } from "zod";
+import type { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 // import LoadingButton from "@/components/loading-button";
@@ -20,8 +19,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { signIn } from "@/lib/auth-client";
+import { AuthForgotPassword, Home } from "@/routes";
 import { signInSchema } from "@/zod/zod";
-import { type ErrorContext } from "@better-fetch/fetch";
+import type { ErrorContext } from "@better-fetch/fetch";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 export default function SignIn() {
@@ -51,7 +51,7 @@ export default function SignIn() {
           // setPendingCredentials(true);
         },
         onSuccess: async () => {
-          router.push("/");
+          router.push(Home());
           router.refresh();
         },
         onError: (ctx: ErrorContext) => {
@@ -77,7 +77,7 @@ export default function SignIn() {
           // setPendingGithub(true);
         },
         onSuccess: async () => {
-          router.push("/");
+          router.push(Home());
           router.refresh();
         },
         onError: (ctx: ErrorContext) => {
@@ -144,12 +144,9 @@ export default function SignIn() {
             </Button>
           </div>
           <div className="mt-4 text-center text-sm">
-            <Link
-              href="/forgot-password"
-              className="text-primary hover:underline"
-            >
+            <AuthForgotPassword.Link className="text-primary hover:underline">
               Forgot password?
-            </Link>
+            </AuthForgotPassword.Link>
           </div>
         </CardContent>
       </Card>
