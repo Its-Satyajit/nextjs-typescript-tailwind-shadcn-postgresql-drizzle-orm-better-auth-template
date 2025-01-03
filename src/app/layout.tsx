@@ -18,8 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${R.variable} ${RI.variable} antialiased`}>
-        {children}
+      <body
+        className={`${R.variable} ${RI.variable} container mx-auto antialiased`}
+      >
+        <Header />
+        <div className="prose-base"> {children}</div>
+        <Footer />
       </body>
     </html>
   );
