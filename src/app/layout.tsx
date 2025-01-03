@@ -2,10 +2,9 @@ import "../styles/globals.css";
 
 import type { Metadata } from "next";
 
-import {
-  R,
-  RI,
-} from "@/styles/Fonts";
+import Footer from "@/components/section/Footer";
+import Header from "@/components/section/Header";
+import { R, RI } from "@/styles/Fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${R.variable} ${RI.variable} antialiased`}>
-        {children}
+        <div className="grid h-screen grid-rows-[auto_1fr_auto]">
+          <Header />
+          <div className="container prose-base mx-auto py-3"> {children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );
