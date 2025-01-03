@@ -12,8 +12,10 @@ import * as AuthForgotPasswordRoute from "@/app/(auth)/forgot-password/page.info
 import * as AuthResetPasswordRoute from "@/app/(auth)/reset-password/page.info";
 import * as AuthSignInRoute from "@/app/(auth)/sign-in/page.info";
 import * as AuthSignUpRoute from "@/app/(auth)/sign-up/page.info";
+import * as DashboardRoute from "@/app/(dashboard)/page.info";
+import * as DashboardAdminRoute from "@/app/(dashboard)/admin/page.info";
+import * as DashboardUserRoute from "@/app/(dashboard)/user/page.info";
 import * as ApiAuthAllRoute from "@/app/api/auth/[...all]/route.info";
-import * as DashboardRoute from "@/app/dashboard/page.info";
 
 export const Home = makeRoute("/", {
   ...defaultInfo,
@@ -39,11 +41,19 @@ export const AuthSignUp = makeRoute("/(auth)/sign-up", {
   ...defaultInfo,
   ...AuthSignUpRoute.Route,
 });
+export const Dashboard = makeRoute("/(dashboard)", {
+  ...defaultInfo,
+  ...DashboardRoute.Route,
+});
+export const DashboardAdmin = makeRoute("/(dashboard)/admin", {
+  ...defaultInfo,
+  ...DashboardAdminRoute.Route,
+});
+export const DashboardUser = makeRoute("/(dashboard)/user", {
+  ...defaultInfo,
+  ...DashboardUserRoute.Route,
+});
 export const ApiAuthAll = makeRoute("/api/auth/[...all]", {
   ...defaultInfo,
   ...ApiAuthAllRoute.Route,
-});
-export const Dashboard = makeRoute("/dashboard", {
-  ...defaultInfo,
-  ...DashboardRoute.Route,
 });

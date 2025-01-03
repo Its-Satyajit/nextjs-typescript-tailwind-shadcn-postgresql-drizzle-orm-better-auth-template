@@ -1,3 +1,5 @@
+import "server-only";
+
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";
@@ -24,7 +26,14 @@ export const auth = betterAuth({
     },
   },
   user: {
-    additionalFields: {},
+    additionalFields: {
+      role: {
+        type: "string",
+        default: "user",
+        required: false,
+        defaultValue: "user",
+      },
+    },
     changeEmail: {
       enabled: true,
       sendChangeEmailVerification: async ({ newEmail, url }) => {

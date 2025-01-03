@@ -12,21 +12,27 @@ const adminRoutes = ["/admin"];
 export default async function authMiddleware(request: NextRequest) {
   const pathName = request.nextUrl.pathname;
 
+  // Allow public access to the root path
+  if (pathName === "/") {
+    return NextResponse.next();
+  }
+
   const isAuthRoute = authRoutes.includes(pathName);
   const isPasswordRoute = passwordRoutes.includes(pathName);
   const isAdminRoute = adminRoutes.includes(pathName);
 
+  // Fetch the session to check authentication and role
   const { data: session } = await betterFetch<Session>(
     "/api/auth/get-session",
     {
       baseURL: env.BETTER_AUTH_URL,
       headers: {
-        //get the cookie from the request
         cookie: request.headers.get("cookie") ?? "",
       },
     },
   );
 
+  // If no session exists and the route is not an auth or password route, redirect to sign-in
   if (!session) {
     if (isAuthRoute || isPasswordRoute) {
       return NextResponse.next();
@@ -34,14 +40,17 @@ export default async function authMiddleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/sign-in", request.url));
   }
 
+  // If the user is authenticated but tries to access an auth or password route, redirect to home
   if (isAuthRoute || isPasswordRoute) {
     return NextResponse.redirect(new URL("/", request.url));
   }
 
+  // Restrict access to admin routes based on user role
   if (isAdminRoute && session.user.role !== "admin") {
     return NextResponse.redirect(new URL("/", request.url));
   }
 
+  // Allow access to all other routes
   return NextResponse.next();
 }
 
