@@ -3,7 +3,7 @@ import { z } from "zod";
 import { makeRoute } from "./makeRoute";
 
 const defaultInfo = {
-  search: z.object({})
+  search: z.object({}),
 };
 
 import * as HomeRoute from "@/app/page.info";
@@ -16,67 +16,39 @@ import * as DashboardAdminRoute from "@/app/(dashboard)/admin/page.info";
 import * as DashboardUserRoute from "@/app/(dashboard)/user/page.info";
 import * as ApiAuthAllRoute from "@/app/api/auth/[...all]/route.info";
 
-export const Home = makeRoute(
-  "/",
-  {
-    ...defaultInfo,
-    ...HomeRoute.Route
-  }
-);
-export const AuthEmailVerified = makeRoute(
-  "/(auth)/email-verified",
-  {
-    ...defaultInfo,
-    ...AuthEmailVerifiedRoute.Route
-  }
-);
-export const AuthForgotPassword = makeRoute(
-  "/(auth)/forgot-password",
-  {
-    ...defaultInfo,
-    ...AuthForgotPasswordRoute.Route
-  }
-);
-export const AuthResetPassword = makeRoute(
-  "/(auth)/reset-password",
-  {
-    ...defaultInfo,
-    ...AuthResetPasswordRoute.Route
-  }
-);
-export const AuthSignIn = makeRoute(
-  "/(auth)/sign-in",
-  {
-    ...defaultInfo,
-    ...AuthSignInRoute.Route
-  }
-);
-export const AuthSignUp = makeRoute(
-  "/(auth)/sign-up",
-  {
-    ...defaultInfo,
-    ...AuthSignUpRoute.Route
-  }
-);
-export const DashboardAdmin = makeRoute(
-  "/(dashboard)/admin",
-  {
-    ...defaultInfo,
-    ...DashboardAdminRoute.Route
-  }
-);
-export const DashboardUser = makeRoute(
-  "/(dashboard)/user",
-  {
-    ...defaultInfo,
-    ...DashboardUserRoute.Route
-  }
-);
-export const ApiAuthAll = makeRoute(
-  "/api/auth/[...all]",
-  {
-    ...defaultInfo,
-    ...ApiAuthAllRoute.Route
-  }
-);
-
+export const Home = makeRoute("/", {
+  ...defaultInfo,
+  ...HomeRoute.Route,
+});
+export const AuthEmailVerified = makeRoute("/(auth)/email-verified", {
+  ...defaultInfo,
+  ...AuthEmailVerifiedRoute.Route,
+});
+export const AuthForgotPassword = makeRoute("/(auth)/forgot-password", {
+  ...defaultInfo,
+  ...AuthForgotPasswordRoute.Route,
+});
+export const AuthResetPassword = makeRoute("/(auth)/reset-password", {
+  ...defaultInfo,
+  ...AuthResetPasswordRoute.Route,
+});
+export const AuthSignIn = makeRoute("/(auth)/sign-in", {
+  ...defaultInfo,
+  ...AuthSignInRoute.Route,
+});
+export const AuthSignUp = makeRoute("/(auth)/sign-up", {
+  ...defaultInfo,
+  ...AuthSignUpRoute.Route,
+});
+export const DashboardAdmin = makeRoute("/(dashboard)/admin", {
+  ...defaultInfo,
+  ...DashboardAdminRoute.Route,
+});
+export const DashboardUser = makeRoute("/(dashboard)/user", {
+  ...defaultInfo,
+  ...DashboardUserRoute.Route,
+});
+export const ApiAuthAll = makeRoute("/api/auth/[...all]", {
+  ...defaultInfo,
+  ...ApiAuthAllRoute.Route,
+});

@@ -1,3 +1,7 @@
 export default function Footer() {
-  return <div>Footer</div>;
+  return (
+    <div>
+      <div className="container mx-auto">Footer</div>
+    </div>
+  );
 }

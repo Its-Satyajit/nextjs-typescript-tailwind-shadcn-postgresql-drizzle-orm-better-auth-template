@@ -1,3 +1,3 @@
-export default function Page() {
-  return <h1>Welcome to page!</h1>;
+export default function UserDashBoard() {
+  return <div>User DashBoard</div>;
 }

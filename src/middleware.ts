@@ -13,7 +13,7 @@ export default async function authMiddleware(request: NextRequest) {
   const pathName = request.nextUrl.pathname;
 
   // Allow public access to the root path
-  if (pathName === "/") {
+  if (pathName === Home()) {
     return NextResponse.next();
   }
 
@@ -37,17 +37,17 @@ export default async function authMiddleware(request: NextRequest) {
     if (isAuthRoute || isPasswordRoute) {
       return NextResponse.next();
     }
-    return NextResponse.redirect(new URL("/sign-in", request.url));
+    return NextResponse.redirect(new URL(AuthSignIn(), request.url));
   }
 
   // If the user is authenticated but tries to access an auth or password route, redirect to home
   if (isAuthRoute || isPasswordRoute) {
-    return NextResponse.redirect(new URL("/", request.url));
+    return NextResponse.redirect(new URL(Home(), request.url));
   }
 
   // Restrict access to admin routes based on user role
   if (isAdminRoute && session.user.role !== "admin") {
-    return NextResponse.redirect(new URL("/", request.url));
+    return NextResponse.redirect(new URL(Home(), request.url));
   }
 
   // Allow access to all other routes
