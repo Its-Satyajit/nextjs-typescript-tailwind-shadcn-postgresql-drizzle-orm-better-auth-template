@@ -3,7 +3,7 @@ import { z } from "zod";
 import { makeRoute } from "./makeRoute";
 
 const defaultInfo = {
-  search: z.object({}),
+  search: z.object({})
 };
 
 import * as HomeRoute from "@/app/page.info";
