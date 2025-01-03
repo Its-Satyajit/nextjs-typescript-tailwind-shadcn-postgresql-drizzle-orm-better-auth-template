@@ -1,9 +1,9 @@
-import Link from "next/link";
-import queryString from "query-string";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import Link from "next/link";
+import queryString from "query-string";
 /*
 Derived from: https://www.flightcontrol.dev/blog/fix-nextjs-routing-to-have-full-type-safety
 */
@@ -137,10 +137,11 @@ export type RouteBuilder<
 function createPathBuilder<T extends Record<string, string | string[]>>(
   route: string,
 ): (params: T) => string {
-  const pathArr = route.split("/");
+  const pathArr = route.split("/").filter(Boolean); // Remove empty strings from splitting
 
   let catchAllSegment: ((params: T) => string) | null = null;
   if (pathArr.at(-1)?.startsWith("[[...")) {
+    // biome-ignore lint/style/noNonNullAssertion: <explanation>
     const catchKey = pathArr.pop()!.replace("[[...", "").replace("]]", "");
     catchAllSegment = (params: T) => {
       const catchAll = params[catchKey] as unknown as string[];
@@ -166,15 +167,18 @@ function createPathBuilder<T extends Record<string, string | string[]>>(
   }
 
   return (params: T): string => {
-    const p = elems
+    const segments = elems
       .map((e) => e(params))
       .filter(Boolean)
       .join("/");
+
+    // Always ensure a leading slash
+    const path = segments ? `/${segments}` : "/";
+
     if (catchAllSegment) {
-      return p + catchAllSegment(params);
-    } else {
-      return p.length ? p : "/";
+      return path + catchAllSegment(params);
     }
+    return path;
   };
 }
 
@@ -192,9 +196,8 @@ function createRouteBuilder<
         throw new Error(
           `Invalid params for route ${info.name}: ${safeParams.error.message}`,
         );
-      } else {
-        checkedParams = safeParams.data;
       }
+      checkedParams = safeParams.data;
     }
     const safeSearch = info.search
       ? info.search?.safeParse(search ?? {})

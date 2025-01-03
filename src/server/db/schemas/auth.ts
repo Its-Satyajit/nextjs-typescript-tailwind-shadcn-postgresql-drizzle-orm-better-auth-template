@@ -1,4 +1,6 @@
-import { boolean, pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import { boolean, pgEnum, pgTable, text, timestamp } from "drizzle-orm/pg-core";
+
+export const userRoleEnums = pgEnum("Role", ["user", "admin", "superAdmin"]);
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
@@ -8,7 +10,7 @@ export const user = pgTable("user", {
   image: text("image"),
   createdAt: timestamp("created_at").notNull(),
   updatedAt: timestamp("updated_at").notNull(),
-  role: text("role"),
+  role: userRoleEnums("role").default("user").notNull(),
   banned: boolean("banned"),
   banReason: text("ban_reason"),
   banExpires: timestamp("ban_expires"),
