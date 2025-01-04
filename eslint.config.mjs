@@ -9,6 +9,7 @@ import drizzle from "eslint-plugin-drizzle";
 
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 
@@ -27,6 +28,7 @@ const eslintConfig = [
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
   ),
+  ...pluginQuery.configs["flat/recommended"],
   {
     plugins: {
       "@typescript-eslint": typescriptEslint,
