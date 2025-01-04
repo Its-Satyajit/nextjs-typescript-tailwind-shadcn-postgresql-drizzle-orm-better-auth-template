@@ -4,10 +4,7 @@ import type { Metadata } from "next";
 
 import Footer from "@/components/section/Footer";
 import Header from "@/components/section/Header";
-import {
-  R,
-  RI,
-} from "@/styles/Fonts";
+import { R, RI } from "@/styles/Fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
