@@ -17,6 +17,9 @@ importers:
       '@icons-pack/react-simple-icons':
         specifier: ^10.2.0
         version: 10.2.0(react@19.0.0)
+      '@its-satyajit/id-generator':
+        specifier: npm:@jsr/its-satyajit__id-generator@^0.2.1
+        version: '@jsr/its-satyajit__id-generator@0.2.1'
       '@radix-ui/react-avatar':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.2(@types/react@19.0.2))(@types/react@19.0.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -35,6 +38,12 @@ importers:
       '@t3-oss/env-nextjs':
         specifier: ^0.11.1
         version: 0.11.1(typescript@5.7.2)(zod@3.24.1)
+      '@tanstack/react-query':
+        specifier: ^5.62.15
+        version: 5.62.15(react@19.0.0)
+      '@tanstack/react-query-devtools':
+        specifier: ^5.62.15
+        version: 5.62.15(@tanstack/react-query@5.62.15(react@19.0.0))(react@19.0.0)
       better-auth:
         specifier: ^1.1.9
         version: 1.1.9
@@ -99,6 +108,9 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.15
         version: 0.5.15(tailwindcss@3.4.17)
+      '@tanstack/eslint-plugin-query':
+        specifier: ^5.62.15
+        version: 5.62.15(eslint@9.17.0(jiti@1.21.7))(typescript@5.7.2)
       '@types/node':
         specifier: ^22.10.5
         version: 22.10.5
@@ -693,6 +705,9 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
+  '@jsr/its-satyajit__id-generator@0.2.1':
+    resolution: {integrity: sha512-1EE08U4aYuhnEbr0XE9lVzWRpmOuRI0ZZCVyQ5RknIpuN3ef0JJhDZg01hG+LRQyaKPXM3tVJw3Ex7EMILQ9wg==, tarball: https://npm.jsr.io/~/11/@jsr/its-satyajit__id-generator/0.2.1.tgz}
+
   '@levischuck/tiny-cbor@0.2.2':
     resolution: {integrity: sha512-f5CnPw997Y2GQ8FAvtuVVC19FX8mwNNC+1XJcIi16n/LTJifKO6QBgGLgN3YEmqtGMk17SKSuoWES3imJVxAVw==}
 
@@ -1142,6 +1157,28 @@ packages:
     resolution: {integrity: sha512-AqhlCXl+8grUz8uqExv5OTtgpjuVIwFTSXTrh8y9/pw6q2ek7fJ+Y8ZEVw7EB2DCcuCOtEjf9w3+J3rzts01uA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20'
+
+  '@tanstack/eslint-plugin-query@5.62.15':
+    resolution: {integrity: sha512-24BHoF3LIzyptjrZXc1IpaISno+fhVD3zWWso/HPSB+ZVOyOXoiQSQc2K362T13JKJ07EInhHi1+KyNoRzCCfQ==}
+    peerDependencies:
+      eslint: ^8.57.0 || ^9.0.0
+
+  '@tanstack/query-core@5.62.15':
+    resolution: {integrity: sha512-wT20X14CxcWY8YLJ/1pnsXn/y1Q2uRJZYWW93PWRtZt+3/JlGZyiyTcO4pGnqycnP7CokCROAyatsraosqZsDA==}
+
+  '@tanstack/query-devtools@5.62.9':
+    resolution: {integrity: sha512-b1NZzDLVf6laJsB1Cfm3ieuYzM+WqoO8qpm9v+3Etwd+Ph4zkhUMiT+wcWj5AhEPsXiRodKYiiW048VDNdBxNg==}
+
+  '@tanstack/react-query-devtools@5.62.15':
+    resolution: {integrity: sha512-8aE7uD45NHZgNtHMVQC7PvM9f72mKK4bqcpHr9La8TsTRX7x8dy2Kdu2ReFNLCrdlEWkxdP5843tc/lHg+Q/rg==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.62.15
+      react: ^18 || ^19
+
+  '@tanstack/react-query@5.62.15':
+    resolution: {integrity: sha512-Ny3xxsOWmEQCFyHiV3CF7t6+QAV+LpBEREiXyllKR4+tStyd8smOAa98ZHmEx0ZNy36M31K8enifB5wTSYAKJw==}
+    peerDependencies:
+      react: ^18 || ^19
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -3544,6 +3581,8 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
+  '@jsr/its-satyajit__id-generator@0.2.1': {}
+
   '@levischuck/tiny-cbor@0.2.2': {}
 
   '@next/env@15.1.3': {}
@@ -3957,6 +3996,29 @@ snapshots:
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.17
+
+  '@tanstack/eslint-plugin-query@5.62.15(eslint@9.17.0(jiti@1.21.7))(typescript@5.7.2)':
+    dependencies:
+      '@typescript-eslint/utils': 8.19.0(eslint@9.17.0(jiti@1.21.7))(typescript@5.7.2)
+      eslint: 9.17.0(jiti@1.21.7)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+
+  '@tanstack/query-core@5.62.15': {}
+
+  '@tanstack/query-devtools@5.62.9': {}
+
+  '@tanstack/react-query-devtools@5.62.15(@tanstack/react-query@5.62.15(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@tanstack/query-devtools': 5.62.9
+      '@tanstack/react-query': 5.62.15(react@19.0.0)
+      react: 19.0.0
+
+  '@tanstack/react-query@5.62.15(react@19.0.0)':
+    dependencies:
+      '@tanstack/query-core': 5.62.15
+      react: 19.0.0
 
   '@types/estree@1.0.6': {}
 
