@@ -4,7 +4,7 @@ import { Suspense, useState } from "react";
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { type z } from "zod";
+import type { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,6 +19,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { resetPassword } from "@/lib/auth-client";
+import { AuthSignIn } from "@/routes";
 import { resetPasswordSchema } from "@/zod/zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -53,7 +54,7 @@ function ResetPasswordContent() {
         title: "Success",
         description: "Password reset successful. Login to continue.",
       });
-      router.push("/sign-in");
+      router.push(AuthSignIn());
     }
     setIsPending(false);
   };
