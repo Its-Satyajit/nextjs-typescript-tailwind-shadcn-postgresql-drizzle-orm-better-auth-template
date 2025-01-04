@@ -9,7 +9,7 @@ import {
 } from "next/navigation";
 import { z } from "zod";
 
-import { type RouteBuilder } from "./makeRoute";
+import type { RouteBuilder } from "./makeRoute";
 
 const emptySchema = z.object({});
 

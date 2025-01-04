@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import { buttonVariants } from "@/components/ui/button";
+import { Home } from "@/routes";
 
 export default async function EmailVerifiedPage() {
   return (
@@ -11,14 +10,13 @@ export default async function EmailVerifiedPage() {
       <p className="mb-4 text-gray-600">
         Your email has been successfully verified.
       </p>
-      <Link
-        href="/"
+      <Home.Link
         className={buttonVariants({
           variant: "default",
         })}
       >
         Go to home
-      </Link>
+      </Home.Link>
     </div>
   );
 }

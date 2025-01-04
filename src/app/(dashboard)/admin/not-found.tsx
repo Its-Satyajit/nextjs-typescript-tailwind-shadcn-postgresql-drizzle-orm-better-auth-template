@@ -1,11 +1,11 @@
-import Link from "next/link";
+import { Home } from "@/routes";
 
 export default function NotFound() {
   return (
     <div>
       <h2>Not Found</h2>
       <p>Could not find requested resource</p>
-      <Link href="/">Return Home</Link>
+      <Home.Link>Return Home</Home.Link>
     </div>
   );
 }
