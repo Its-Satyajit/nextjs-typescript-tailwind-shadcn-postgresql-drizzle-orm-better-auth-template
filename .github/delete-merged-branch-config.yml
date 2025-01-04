@@ -1,0 +1,6 @@
+exclude: 
+  - dev
+  - main
+  - dev*
+  - feature-*
+delete_closed_pr: false
