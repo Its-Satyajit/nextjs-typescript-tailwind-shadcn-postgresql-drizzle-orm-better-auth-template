@@ -18,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${R.variable} ${RI.variable} antialiased`}>
+      <body
+        className={`${R.variable} ${RI.variable} scroll-smooth font-raleway antialiased`}
+      >
         <div className="grid h-screen grid-rows-[auto_1fr_auto]">
           <Header />
           <div className="container prose-base mx-auto py-3"> {children}</div>
