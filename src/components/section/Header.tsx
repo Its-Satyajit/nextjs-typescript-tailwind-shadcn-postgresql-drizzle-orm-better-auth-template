@@ -32,10 +32,7 @@ export default function Header() {
               <DropdownMenu>
                 <DropdownMenuTrigger>
                   <Avatar>
-                    <AvatarImage
-                      src="https://avatars.githubusercontent.com/u/77627641?s=400&u=a62c999f97086dc9bca17b2ea31ab1f4b4e69a2d&v=4"
-                      alt="@shadcn"
-                    />
+                    <AvatarImage src="/images/77627641.jpg" alt="@shadcn" />
                     <AvatarFallback>Its-Satyajit</AvatarFallback>
                   </Avatar>
                 </DropdownMenuTrigger>

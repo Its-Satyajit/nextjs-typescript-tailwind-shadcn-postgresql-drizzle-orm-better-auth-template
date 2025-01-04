@@ -1,6 +1,5 @@
 "use client";
 
-import { GithubIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import type { z } from "zod";
@@ -23,6 +22,7 @@ import { AuthForgotPassword, Home } from "@/routes";
 import { signInSchema } from "@/zod/zod";
 import type { ErrorContext } from "@better-fetch/fetch";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 
 export default function SignIn() {
   const router = useRouter();
@@ -131,15 +131,16 @@ export default function SignIn() {
                   )}
                 />
               ))}
-              <Button>Sign in</Button>
+              <Button className="w-full">Sign in</Button>
             </form>
           </Form>
           <div className="mt-4">
             <Button
+              className="w-full"
               // pending={pendingGithub}
               onClick={handleSignInWithGithub}
             >
-              <GithubIcon className="mr-2 h-4 w-4" />
+              <SiGithub className="mr-2 h-4 w-4" />
               Continue with GitHub
             </Button>
           </div>
