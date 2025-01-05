@@ -104,66 +104,54 @@ nextjs-template/
 
 ## Key Features
 
-### 🔐 Authentication & Authorization
-- Complete authentication flow with Better Auth
-- Email verification system
-- Password reset functionality
-- Role-based access control (Admin/User)
-- Protected routes with middleware
+### Authentication and Authorization
+- Full authentication flow using **Better Auth**.
+- Built-in **email verification**, **password reset**, and **role-based access control** (Admin/User).
+- Middleware to protect routes and ensure data privacy.
 
-### 💾 Database Integration
-- Type-safe database operations with Drizzle ORM
-- PostgreSQL support
-- Automatic migration management
-- Database schema versioning
-- Visual database management studio
+### Database Integration
+- Type-safe interactions with the database using **Drizzle ORM**.
+- Full support for **PostgreSQL** with automatic migration management and schema versioning.
 
-### 🎨 UI Components
-- Accessible components with Radix UI & Shadcn/Ui
-- Responsive design with Tailwind CSS
-- Dark mode support
-- Toast notifications
-- Form validation with React Hook Form and Zod
-
-### 🔧 Development Features
-- Type-safe development with TypeScript
-- Fast refresh with Next.js
-- Code formatting with Prettier
-- Linting with ESLint
-- Logging with Winston
-- Declarative routing system
+### UI and Responsive Design
+- Build accessible user interfaces using **Radix UI** and **shadcn/ui**.
+- Fully responsive designs powered by **Tailwind CSS**, with support for **dark mode** and custom themes.
 
 ## Available Scripts
 
+Use the following commands to manage development, database, and quality assurance tasks:
+
 ```bash
 # Development
-pnpm dev              # Start development server
-pnpm dev:turbo       # Start with Turbo
-pnpm dr:build:watch  # Watch routing changes
+pnpm dev              # Start the development server
+pnpm dev:turbo        # Start with Turbo mode
+pnpm dr:build:watch   # Watch routing changes
 
 # Database
-pnpm db:generate     # Generate schemas
-pnpm db:push        # Push schema changes
-pnpm db:studio      # Open database UI
+pnpm db:generate      # Generate database schemas
+pnpm db:push          # Push schema changes to the database
+pnpm db:studio        # Open the database UI
 
 # Quality Assurance
-pnpm check          # Run all checks
-pnpm lint:fix       # Fix lint issues
-pnpm format:write   # Format code
+pnpm check            # Run all checks
+pnpm lint:fix         # Fix linting issues
+pnpm format:write     # Format the codebase
 ```
 
-## Configuration
+## Configuration Files
 
-### Key Configuration Files
-- `next.config.ts` - Next.js configuration
-- `drizzle.config.ts` - Database configuration
-- `tailwind.config.ts` - Styling configuration
-- `eslint.config.mjs` - Linting rules
-- `declarative-routing.config.json` - Routing configuration
+Key configuration files for managing project settings:
 
-### Environment Variables
+- `next.config.ts` - Configuration for **Next.js**.
+- `drizzle.config.ts` - Database settings for **Drizzle ORM**.
+- `tailwind.config.ts` - Tailwind CSS configuration for styling.
+- `eslint.config.mjs` - Linting rules for **ESLint**.
+
+## Environment Variables
+
+Make sure to set the following environment variables in the `.env` file:
+
 ```env
-
 #Server 
 NODE_ENV=development
 DATABASE_URL=postgresql://postgres:password@host:5432/db
@@ -172,9 +160,9 @@ BETTER_AUTH_URL=http://localhost:3000
 REACT_EDITOR=atom
 
 MAIL_HOST=gmail
-MAIL_USERNAME=username
+MAIL_USERNAME=email@gmail.com
 MAIL_PASSWORD=password
-MAIL_FROM=email@example.com
+MAIL_FROM=email@gmail.com
 EMAIL_VERIFICATION_CALLBACK_URL=http://localhost:3000
 
 GITHUB_CLIENT_ID=secret
@@ -182,38 +170,30 @@ GITHUB_CLIENT_SECRET=secret
 
 #Client
 NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
-
 ```
 
 ## Troubleshooting
 
 ### Common Issues
 
-1. **Database Connection Issues**
-   - Verify PostgreSQL is running
-   - Check DATABASE_URL format
-   - Ensure database exists
+1. **Database Connection Problems**
+   - Ensure PostgreSQL is running and verify the `DATABASE_URL`.
+   - Make sure the specified database exists and can be accessed.
 
-2. **Build Errors**
-   - Run `pnpm check` for type errors
-   - Clear `.next` directory
-   - Update dependencies
+2. **Build Failures**
+   - Run `pnpm check` to detect and fix any type errors.
+   - Clear the `.next` directory if the build persists with errors.
+   - Make sure all dependencies are up to date.
 
-3. **Authentication Issues**
-   - Verify environment variables
-   - Check email configuration
-   - Clear browser cookies
+3. **Authentication Errors**
+   - Verify your environment variables, especially those related to authentication and email settings.
+   - Clear browser cookies and try again if login issues occur.
 
-## Community and Support
+## Support and Community
 
-- 📦 [GitHub Repository](https://github.com/Its-Satyajit/nextjs-template)
-- 🐛 [Issue Tracker](https://github.com/Its-Satyajit/nextjs-template/issues)
-
+-  [GitHub Repository](https://github.com/Its-Satyajit/nextjs-template)
+-  [Issue Tracker](https://github.com/Its-Satyajit/nextjs-template/issues)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/Its-Satyajit/nextjs-template/blob/main/LICENSE.md) file for details.
-
----
-
-Built with ❤️ using Next.js, TypeScript, and TailwindCSS
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/Its-Satyajit/nextjs-template/blob/main/LICENSE.md) file for more details.
