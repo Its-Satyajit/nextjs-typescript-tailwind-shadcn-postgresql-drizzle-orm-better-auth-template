@@ -10,7 +10,7 @@
 function default(props: ReactPortalProps): ReactNode | Promise<ReactNode>
 ```
 
-Defined in: [src/components/custom/ReactPortal.tsx:19](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/components/custom/ReactPortal.tsx#L19)
+Defined in: [src/components/custom/ReactPortal.tsx:19](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/components/custom/ReactPortal.tsx#L19)
 
 ## Parameters
 

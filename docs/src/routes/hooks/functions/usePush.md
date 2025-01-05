@@ -16,7 +16,7 @@ function usePush<Params, Search>(
 ) => void;
 ```
 
-Defined in: [src/routes/hooks.ts:18](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/routes/hooks.ts#L18)
+Defined in: [src/routes/hooks.ts:18](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/routes/hooks.ts#L18)
 
 ## Type Parameters
 

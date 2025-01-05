@@ -23,4 +23,4 @@ const default: Readonly<{
 }>;
 ```
 
-Defined in: [src/env.ts:5](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/env.ts#L5)
+Defined in: [src/env.ts:5](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/env.ts#L5)
