@@ -92,7 +92,7 @@ nextjs-template/
 ## Key Features
 
 ### 🔐 Authentication & Authorization
-- Complete authentication flow with Next.js Auth
+- Complete authentication flow with Better Auth
 - Email verification system
 - Password reset functionality
 - Role-based access control (Admin/User)
