@@ -26,8 +26,11 @@ export default function Home() {
           {/* Hero */}
           <div className="max-w-3xl space-y-8">
             <h1 className="text-4xl font-light leading-tight text-black sm:text-5xl">
-              Supercharge your
-              <span className="font-normal"> next development project</span>
+              <span className="text-6xl font-semibold uppercase">
+                Supercharge
+              </span>{" "}
+              <br />
+              your next Next.js project.
             </h1>
 
             <p className="text-lg leading-relaxed text-zinc-500">
