@@ -1,16 +1,10 @@
-import {
-  type NextRequest,
-  NextResponse,
-} from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 
 import { betterFetch } from "@better-fetch/fetch";
 
 import env from "./env";
 import type { Session } from "./lib/auth";
-import {
-  AuthSignIn,
-  Home,
-} from "./routes";
+import { AuthSignIn, Home } from "./routes";
 
 const authRoutes = ["/sign-in", "/sign-up"];
 const passwordRoutes = ["/reset-password", "/forgot-password"];
