@@ -106,7 +106,7 @@ nextjs-template/
 - Visual database management studio
 
 ### 🎨 UI Components
-- Accessible components with Radix UI
+- Accessible components with Radix UI & Shadcn/Ui
 - Responsive design with Tailwind CSS
 - Dark mode support
 - Toast notifications
