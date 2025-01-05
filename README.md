@@ -50,10 +50,7 @@ git clone https://github.com/your-username/nextjs-template.git
 pnpm install
 ```
 
-3. **Set up environment variables**
-```bash
-cp .env.example .env
-```
+3. **[Set up environment variables](https://github.com/Its-Satyajit/nextjs-template?tab=readme-ov-file#environment-variables)**
 
 4. **Initialize database**
 ```bash
