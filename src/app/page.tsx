@@ -2,11 +2,12 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { AuthSignIn } from "@/routes";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-col gap-4">
+    <div className="flex h-full flex-col gap-4">
+      <div className="my-auto flex flex-col gap-4">
         <div className="container mx-auto flex flex-col items-center justify-center gap-4 py-4">
           <div className="text-center text-3xl font-bold text-gray-800">
             Welcome to Next.js Template
@@ -17,13 +18,19 @@ export default function Home() {
           </div>
           <div className="mt-4 flex flex-col items-center justify-center gap-4">
             <Link href="https://github.com/new?template_name=nextjs-template&template_owner=Its-Satyajit">
-              {" "}
               <Button className="w-full">Get Started</Button>
             </Link>
             <div className="text-center text-sm text-gray-500">or</div>
             <AuthSignIn.Link className="text-primary hover:underline">
               Sign in
             </AuthSignIn.Link>
+
+            <Link href="https://github.com/Its-Satyajit/nextjs-template">
+              <Button className="w-full">
+                {" "}
+                <SiGithub className="mr-2 h-4 w-4" /> View on Github
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
