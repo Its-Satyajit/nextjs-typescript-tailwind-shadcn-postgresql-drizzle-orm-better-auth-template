@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import type { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -16,7 +17,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
 import { signIn } from "@/lib/auth-client";
 import { AuthForgotPassword, Home } from "@/routes";
 import { signInSchema } from "@/zod/zod";
@@ -26,7 +26,7 @@ import { SiGithub } from "@icons-pack/react-simple-icons";
 
 export default function SignIn() {
   const router = useRouter();
-  const { toast } = useToast();
+
   // const [pendingCredentials, setPendingCredentials] = useState(false);
   // const [pendingGithub, setPendingGithub] = useState(false);
 
@@ -53,13 +53,14 @@ export default function SignIn() {
         onSuccess: async () => {
           router.push(Home());
           router.refresh();
+          toast.success("Successfully signed in!", {
+            description: "You have successfully signed in!",
+          });
         },
         onError: (ctx: ErrorContext) => {
           console.log(ctx);
-          toast({
-            title: "Something went wrong",
+          toast.error("Something went wrong!", {
             description: ctx.error.message ?? "Something went wrong.",
-            variant: "destructive",
           });
         },
       },
@@ -81,10 +82,9 @@ export default function SignIn() {
           router.refresh();
         },
         onError: (ctx: ErrorContext) => {
-          toast({
-            title: "Something went wrong",
+          console.log(ctx);
+          toast.error("Something went wrong!", {
             description: ctx.error.message ?? "Something went wrong.",
-            variant: "destructive",
           });
         },
       },

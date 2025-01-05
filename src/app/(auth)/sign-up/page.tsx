@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import type { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -16,7 +17,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
 import { signUp } from "@/lib/auth-client";
 import { AuthSignIn } from "@/routes";
 import { signUpSchema } from "@/zod/zod";
@@ -24,7 +24,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 export default function SignUp() {
   const [pending, setPending] = useState(false);
-  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
@@ -48,16 +47,14 @@ export default function SignUp() {
           setPending(true);
         },
         onSuccess: () => {
-          toast({
-            title: "Account created",
+          toast.success("Successfully signed up!", {
             description:
-              "Your account has been created. Check your email for a verification link.",
+              "You have successfully signed up! Please check your email for verification.",
           });
         },
         onError: (ctx) => {
           console.log("error", ctx);
-          toast({
-            title: "Something went wrong",
+          toast.error("Something went wrong!", {
             description: ctx.error.message ?? "Something went wrong.",
           });
         },
@@ -106,7 +103,9 @@ export default function SignUp() {
                   )}
                 />
               ))}
-              <Button disabled={pending}>Sign up</Button>
+              <Button className="w-full" disabled={pending}>
+                Sign up
+              </Button>
             </form>
           </Form>
           <div className="mt-4 text-center text-sm">

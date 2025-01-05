@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import ReactQueryProvider from "@/components/providers/ReactQuery";
 import Footer from "@/components/section/Footer";
 import Header from "@/components/section/Header";
+import { Toaster } from "@/components/ui/sonner";
 import env from "@/env";
 import { R, RI } from "@/styles/Fonts";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
@@ -31,6 +32,7 @@ export default function RootLayout({
             <Footer />
           </div>
           {env.NODE_ENV === "development" ? <ReactQueryDevtools /> : null}
+          <Toaster />
         </ReactQueryProvider>
       </body>
     </html>
