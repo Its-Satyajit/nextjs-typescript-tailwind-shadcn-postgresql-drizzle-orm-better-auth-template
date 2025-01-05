@@ -1,7 +1,7 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["raleway", "satyajit"],
+  "words": ["raleway", "satyajit", "sonner"],
   "flagWords": [],
   "ignorePaths": [
     "node_modules",
