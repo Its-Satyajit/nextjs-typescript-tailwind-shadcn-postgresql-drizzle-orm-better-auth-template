@@ -10,7 +10,7 @@
 function reducer(state: State, action: Action): State;
 ```
 
-Defined in: [src/hooks/use-toast.ts:75](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/hooks/use-toast.ts#L75)
+Defined in: [src/hooks/use-toast.ts:75](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/hooks/use-toast.ts#L75)
 
 ## Parameters
 

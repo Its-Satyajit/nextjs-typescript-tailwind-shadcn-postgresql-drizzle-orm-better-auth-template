@@ -10,7 +10,7 @@
 function default(__namedParameters: object): Element
 ```
 
-Defined in: [src/app/(dashboard)/admin/error.tsx:5](<https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/app/(dashboard)/admin/error.tsx#L5>)
+Defined in: [src/app/(dashboard)/admin/error.tsx:5](<https://github.com/Its-Satyajit/nextjs-template/blob/main/src/app/(dashboard)/admin/error.tsx#L5>)
 
 ## Parameters
 

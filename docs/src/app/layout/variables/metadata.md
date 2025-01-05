@@ -10,4 +10,4 @@
 const metadata: Metadata;
 ```
 
-Defined in: [src/app/layout.tsx:13](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/app/layout.tsx#L13)
+Defined in: [src/app/layout.tsx:13](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/app/layout.tsx#L13)

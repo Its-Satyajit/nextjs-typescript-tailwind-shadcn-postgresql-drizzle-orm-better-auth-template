@@ -14,7 +14,7 @@ function makePutRoute<Params, Search, Body, Result>(
 ): PutRouteBuilder<Params, Search, Body, Result>;
 ```
 
-Defined in: [src/routes/makeRoute.tsx:282](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/routes/makeRoute.tsx#L282)
+Defined in: [src/routes/makeRoute.tsx:282](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/routes/makeRoute.tsx#L282)
 
 ## Type Parameters
 
