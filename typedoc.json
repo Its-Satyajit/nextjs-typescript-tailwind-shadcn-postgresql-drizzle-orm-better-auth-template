@@ -1,0 +1,62 @@
+{
+	"$schema": "https://typedoc.org/schema.json",
+	"entryPoints": ["./**/*.ts", "./**/*.tsx"],
+	"exclude": ["**/node_modules/**"],
+	"excludePrivate": true,
+	"excludeProtected": true,
+	"readme": "none",
+	"hideGenerator": true,
+	"sort": ["source-order"],
+	"plugin": ["typedoc-plugin-markdown"],
+	"out": "./docs",
+	"kindSortOrder": [
+		"Reference",
+		"Project",
+		"Module",
+		"Namespace",
+		"Enum",
+		"EnumMember",
+		"Class",
+		"Interface",
+		"TypeAlias",
+		"Constructor",
+		"Property",
+		"Variable",
+		"Function",
+		"Accessor",
+		"Method",
+		"Parameter",
+		"TypeParameter",
+		"TypeLiteral",
+		"CallSignature",
+		"ConstructorSignature",
+		"IndexSignature",
+		"GetSignature",
+		"SetSignature"
+	],
+	"membersWithOwnFile": ["Enum", "Variable", "Function", "Class", "Interface", "TypeAlias"],
+	// "flattenOutputFiles": true, // Flattens the output structure into a single directory
+	"fileExtension": ".md", // Ensures markdown files are generated with .md extension
+	"useCodeBlocks": true, // Code blocks for all code-related documentation
+	"expandParameters": true, // Expands method parameters for easier reading
+	"formatWithPrettier": true, // Formats code with Prettier
+	"prettierConfigFile": ".prettierrc", // Use a custom Prettier config if necessary
+	"indexFormat": "table", // Generates an index page in a table format
+	"parametersFormat": "table", // Displays parameters in table format
+	"interfacePropertiesFormat": "table", // Properties in interfaces will also be formatted in tables
+	"classPropertiesFormat": "table", // Class properties formatted as tables
+	"enumMembersFormat": "table", // Enum members formatted as tables
+	"typeDeclarationFormat": "table", // Type declarations displayed in tables
+	"tableColumnSettings": {
+		"hideDefaults": false, // Keep defaults visible in tables
+		"hideInherited": false, // Show inherited members
+		"hideModifiers": false, // Show modifiers in documentation
+		"hideOverrides": false, // Show overrides in documentation
+		"hideSources": false, // Show source code links
+		"hideValues": false, // Show the values in enums and constants
+		"leftAlignHeaders": false // Align headers to the left (default is center)
+	},
+	"groupOrder": ["Variables", "Functions", "*"],
+	"sanitizeComments": true, // Sanitize comments to avoid HTML issues
+	"customFooterHtml": "Copyright <strong>Its-Satyajit</strong> 2025. All rights reserved."
+}
