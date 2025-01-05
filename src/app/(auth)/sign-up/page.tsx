@@ -2,12 +2,18 @@
 
 import { useState } from "react";
 
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import type { z } from "zod";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -18,11 +24,15 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { signUp } from "@/lib/auth-client";
-import { AuthSignIn } from "@/routes";
+import {
+  AuthSignIn,
+  Home,
+} from "@/routes";
 import { signUpSchema } from "@/zod/zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 export default function SignUp() {
+  const router = useRouter();
   const [pending, setPending] = useState(false);
 
   const form = useForm<z.infer<typeof signUpSchema>>({
@@ -48,9 +58,14 @@ export default function SignUp() {
         },
         onSuccess: () => {
           toast.success("Successfully signed up!", {
+          toast.success("Successfully signed up!", {
             description:
               "You have successfully signed up! Please check your email for verification.",
+              "You have successfully signed up! Please check your email for verification.",
           });
+
+          router.push(Home());
+          router.refresh();
         },
         onError: (ctx) => {
           console.log("error", ctx);
@@ -103,6 +118,9 @@ export default function SignUp() {
                   )}
                 />
               ))}
+              <Button className="w-full" disabled={pending}>
+                Sign up
+              </Button>
               <Button className="w-full" disabled={pending}>
                 Sign up
               </Button>
