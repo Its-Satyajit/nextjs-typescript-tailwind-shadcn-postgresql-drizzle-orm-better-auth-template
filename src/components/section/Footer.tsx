@@ -35,7 +35,7 @@ export default function Footer() {
             Documentation
           </Link>
           <Link
-            href="/github"
+            href="https://github.com/Its-Satyajit/nextjs-template"
             className="text-sm text-zinc-400 transition-colors hover:text-black"
           >
             GitHub
