@@ -10,4 +10,4 @@
 type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>;
 ```
 
-Defined in: [src/components/ui/toast.tsx:115](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/components/ui/toast.tsx#L115)
+Defined in: [src/components/ui/toast.tsx:115](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/components/ui/toast.tsx#L115)

@@ -13,7 +13,7 @@ function safeParseSearchParams<T>(
 ): z.infer<T>;
 ```
 
-Defined in: [src/routes/utils.ts:9](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/routes/utils.ts#L9)
+Defined in: [src/routes/utils.ts:9](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/routes/utils.ts#L9)
 
 ## Type Parameters
 

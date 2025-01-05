@@ -14,7 +14,7 @@ function resetPassword<FetchOptions>(
 >;
 ```
 
-Defined in: [src/lib/auth-client.ts:11](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/lib/auth-client.ts#L11)
+Defined in: [src/lib/auth-client.ts:11](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/lib/auth-client.ts#L11)
 
 ## Type Parameters
 

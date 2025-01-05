@@ -44,4 +44,4 @@ const signUpSchema: ZodEffects<
 >;
 ```
 
-Defined in: [src/zod/zod.ts:18](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/zod/zod.ts#L18)
+Defined in: [src/zod/zod.ts:18](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/zod/zod.ts#L18)

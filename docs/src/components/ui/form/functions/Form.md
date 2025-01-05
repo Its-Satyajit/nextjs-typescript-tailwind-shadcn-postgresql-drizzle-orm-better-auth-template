@@ -12,7 +12,7 @@ function Form<TFieldValues, TContext, TTransformedValues>(
 ): Element;
 ```
 
-Defined in: [src/components/ui/form.tsx:19](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/components/ui/form.tsx#L19)
+Defined in: [src/components/ui/form.tsx:19](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/components/ui/form.tsx#L19)
 
 A provider component that propagates the `useForm` methods to all children components via [React Context](https://reactjs.org/docs/context.html) API. To be used with useFormContext.
 

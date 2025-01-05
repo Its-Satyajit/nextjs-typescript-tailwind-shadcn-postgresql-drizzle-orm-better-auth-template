@@ -29,7 +29,7 @@ export default function Footer() {
 
         <div className="flex gap-6">
           <Link
-            href="https://github.com/Its-Satyajit/nextjs-template/tree/main/docs"
+            href="https://github.com/Its-Satyajit/nextjs-template/blob/main/docs/README.md"
             className="text-sm text-zinc-400 transition-colors hover:text-black"
           >
             Documentation

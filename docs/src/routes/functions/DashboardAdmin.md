@@ -10,7 +10,7 @@
 function DashboardAdmin(p?: object, search?: object): string;
 ```
 
-Defined in: [src/routes/index.ts:43](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/routes/index.ts#L43)
+Defined in: [src/routes/index.ts:43](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/routes/index.ts#L43)
 
 ## Parameters
 

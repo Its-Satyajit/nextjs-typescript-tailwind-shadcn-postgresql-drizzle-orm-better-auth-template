@@ -12,7 +12,7 @@ function useParams<Params, Search>(
 ): z.output<Params>;
 ```
 
-Defined in: [src/routes/hooks.ts:32](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/routes/hooks.ts#L32)
+Defined in: [src/routes/hooks.ts:32](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/routes/hooks.ts#L32)
 
 ## Type Parameters
 

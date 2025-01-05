@@ -10,7 +10,7 @@
 function sendMail(__namedParameters: object): Promise<void>;
 ```
 
-Defined in: [src/server/Actions/mailAction.ts:23](https://github.com/Its-Satyajit/nextjs-template/blob/a020f2e64682696d16eea8be5c54d400aa09764e/src/server/Actions/mailAction.ts#L23)
+Defined in: [src/server/Actions/mailAction.ts:23](https://github.com/Its-Satyajit/nextjs-template/blob/main/src/server/Actions/mailAction.ts#L23)
 
 ## Parameters
 
