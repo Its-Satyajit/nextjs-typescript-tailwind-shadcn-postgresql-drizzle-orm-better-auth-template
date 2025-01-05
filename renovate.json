@@ -5,7 +5,7 @@
     {
       "matchDepTypes": ["dependencies", "devDependencies"],
       "matchUpdateTypes": ["major"],
-      "enabled": "pr",
+      "enabled": true,
       "automerge": false
     },
     {

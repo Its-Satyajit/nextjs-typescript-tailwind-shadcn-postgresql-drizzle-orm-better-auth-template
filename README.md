@@ -50,10 +50,7 @@ git clone https://github.com/your-username/nextjs-template.git
 pnpm install
 ```
 
-3. **Set up environment variables**
-```bash
-cp .env.example .env
-```
+3. **[Set up environment variables](https://github.com/Its-Satyajit/nextjs-template?tab=readme-ov-file#environment-variables)**
 
 4. **Initialize database**
 ```bash
@@ -92,7 +89,7 @@ nextjs-template/
 ## Key Features
 
 ### 🔐 Authentication & Authorization
-- Complete authentication flow with Next.js Auth
+- Complete authentication flow with Better Auth
 - Email verification system
 - Password reset functionality
 - Role-based access control (Admin/User)
@@ -106,7 +103,7 @@ nextjs-template/
 - Visual database management studio
 
 ### 🎨 UI Components
-- Accessible components with Radix UI
+- Accessible components with Radix UI & Shadcn/Ui
 - Responsive design with Tailwind CSS
 - Dark mode support
 - Toast notifications
@@ -199,7 +196,7 @@ NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Its-Satyajit/nextjs-template/blob/main/LICENSE.md) file for details.
 
 ---
 
