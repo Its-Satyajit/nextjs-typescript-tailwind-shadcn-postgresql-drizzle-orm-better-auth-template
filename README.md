@@ -24,7 +24,8 @@ This Next.js template provides a comprehensive foundation for building efficient
 - **[TypeScript](https://www.typescriptlang.org/)**: A statically typed superset of JavaScript that provides better tooling, error-checking, and maintainability.
 - **[React](https://reactjs.org/)**: A popular JavaScript library for building interactive user interfaces, known for its performance and component-based architecture.
 - **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework that simplifies responsive design and helps create modern, custom user interfaces.
-
+- **[Better Auth](https://www.better-auth.com//)**: The most comprehensive authentication framework for TypeScript.
+  
 ## Key Packages & Integrations
 
 - **[Drizzle ORM](https://orm.drizzle.team)**: A modern, type-safe Object-Relational Mapping (ORM) library for managing database interactions seamlessly.
