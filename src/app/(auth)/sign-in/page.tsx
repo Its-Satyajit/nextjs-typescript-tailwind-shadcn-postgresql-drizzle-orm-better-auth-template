@@ -7,12 +7,7 @@ import type { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 // import LoadingButton from "@/components/loading-button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -23,10 +18,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { signIn } from "@/lib/auth-client";
-import {
-  AuthForgotPassword,
-  Home,
-} from "@/routes";
+import { AuthForgotPassword, Home } from "@/routes";
 import { signInSchema } from "@/zod/zod";
 import type { ErrorContext } from "@better-fetch/fetch";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -66,7 +58,6 @@ export default function SignIn() {
           });
         },
         onError: (ctx: ErrorContext) => {
-          
           toast.error("Something went wrong!", {
             description: ctx.error.message ?? "Something went wrong.",
           });
@@ -90,7 +81,6 @@ export default function SignIn() {
           router.refresh();
         },
         onError: (ctx: ErrorContext) => {
-         
           toast.error("Something went wrong!", {
             description: ctx.error.message ?? "Something went wrong.",
           });
