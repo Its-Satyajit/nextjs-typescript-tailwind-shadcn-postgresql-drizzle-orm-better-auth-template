@@ -16,6 +16,7 @@ export default function Home() {
     core: ["Next.js 15", "TypeScript 5", "React 19", "Tailwind CSS 3"],
     ecosystem: ["Drizzle ORM", "React Query 5", "PostgreSQL", "Radix UI"],
     tools: ["pnpm", "ESLint 9", "Prettier 3", "Winston"],
+    ui: ["Shadcn/Ui", "Simple Icons", "Lucide Icons"],
   };
 
   return (
