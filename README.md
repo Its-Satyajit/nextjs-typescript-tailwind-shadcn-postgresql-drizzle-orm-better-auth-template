@@ -1,9 +1,9 @@
-# Next.js Template with TypeScript, Tailwind CSS, Shadcn/Ui, PostgreSQL, Drizzle ORM, and Better Auth for Scalable Web Applications
+## Next.js Template with TypeScript, Tailwind CSS, Shadcn/Ui, PostgreSQL, Drizzle ORM, and Better Auth for Scalable Web Applications
 
-## Overview
+### Overview
 This Next.js template provides a robust foundation for building modern, scalable, and high-performance web applications. It integrates powerful tools like React, TypeScript, Tailwind CSS, Shadcn/Ui, PostgreSQL, Drizzle ORM, and Better Auth to help developers create efficient, maintainable, and secure applications with ease.
 
-## Table of Contents
+### Table of Contents
 - [Core Technologies](#core-technologies)
 - [Key Packages & Integrations](#key-packages-integrations)
 - [Development Tools](#development-tools)
@@ -18,7 +18,7 @@ This Next.js template provides a robust foundation for building modern, scalable
 - [Support and Community](#support-and-community)
 - [License](#license)
 
-## Core Technologies
+### Core Technologies
 
 - **[Next.js](https://nextjs.org/)**: Next.js is a powerful React framework used for building fast, SEO-friendly, and optimized web applications, offering server-side rendering (SSR) and static site generation (SSG) out of the box.
 - **[TypeScript](https://www.typescriptlang.org/)**: TypeScript enhances JavaScript by adding static types, improving tooling, and catching errors early, making code easier to maintain.
@@ -26,13 +26,13 @@ This Next.js template provides a robust foundation for building modern, scalable
 - **[Tailwind CSS](https://tailwindcss.com/)**: Tailwind is a utility-first CSS framework that simplifies responsive design and helps create aesthetically pleasing, modern web applications quickly.
 - **[Better Auth](https://www.better-auth.com//)**: A comprehensive authentication solution for TypeScript, providing secure and scalable authentication for web applications.
   
-## Key Packages & Integrations
+### Key Packages & Integrations
 
 - **[Drizzle ORM](https://orm.drizzle.team)**: Drizzle ORM is a modern, type-safe Object-Relational Mapping (ORM) library that facilitates smooth database interactions, reducing boilerplate code and preventing errors.
 - **[React Query](https://tanstack.com/query)**: A powerful library for data fetching, caching, and synchronization in React, improving performance and data consistency.
 - **[PostgreSQL](https://www.postgresql.org/)**: PostgreSQL is an advanced, open-source relational database system known for its reliability, data integrity, and scalability in production environments.
 
-## Development Tools
+### Development Tools
 
 - **[pnpm](https://pnpm.io/)**: A fast, disk-space-efficient package manager that ensures faster installs and better dependency management for large JavaScript and TypeScript projects.
 - **[ESLint](https://eslint.org/)**: A tool for identifying and fixing problems in JavaScript/TypeScript code, ensuring code quality and consistency.
@@ -43,9 +43,9 @@ This Next.js template provides a robust foundation for building modern, scalable
 
 ---
 
-## Project Setup
+### Project Setup
 
-### Prerequisites
+#### Prerequisites
 
 Before getting started, make sure that you have the following tools installed on your system:
 
@@ -53,7 +53,7 @@ Before getting started, make sure that you have the following tools installed on
 - **pnpm 9+**
 - **PostgreSQL 16+**
 
-### Installation Instructions
+#### Installation Instructions
 
 Follow these steps to set up the project:
 
@@ -81,7 +81,7 @@ Follow these steps to set up the project:
    ```
 Your application will be available at `http://localhost:3000`.
 
-## Project Structure
+### Project Structure
 
 ```bash
 nextjs-template/
@@ -103,21 +103,21 @@ nextjs-template/
 └── [configuration files]     # Various config files
 ```
 
-## Key Features
+### Key Features
 
-### Authentication and Authorization
+#### Authentication and Authorization
 - Full **authentication flow** with **Better Auth** for secure user login and session management.
 - Built-in **email verification**, **password reset**, and **role-based access control** (Admin/User).
 - Middleware for route protection and ensuring sensitive data is only accessible to authorized users.
 
-### Database Integration
+#### Database Integration
 - **Type-safe database interactions** using **Drizzle ORM** to eliminate errors and ensure efficient queries.
 - Full PostgreSQL integration, including **automatic migrations** and **schema versioning** for streamlined database management.
 
-### UI and Responsive Design
+#### UI and Responsive Design
 - Build intuitive and accessible **user interfaces** with **Radix UI** and **shadcn/ui**.
 - Fully **responsive designs** using **Tailwind CSS**, with support for **dark mode** and custom theme management for modern web experiences.
-## Available Scripts
+### Available Scripts
 
 Use the following commands to manage development, database, and quality assurance tasks:
 
@@ -138,7 +138,7 @@ pnpm lint:fix         # Fix linting issues
 pnpm format:write     # Format the codebase
 ```
 
-## Configuration Files
+### Configuration Files
 
 Key configuration files for managing project settings:
 
@@ -147,7 +147,7 @@ Key configuration files for managing project settings:
 - `tailwind.config.ts` - Tailwind CSS setup for custom styling.
 - `eslint.config.mjs` - ESLint configuration for consistent code quality.
 
-## Environment Variables
+### Environment Variables
 
 Make sure to set the following environment variables in the `.env` file:
 
@@ -172,9 +172,9 @@ GITHUB_CLIENT_SECRET=secret
 NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
 ```
 
-## Troubleshooting
+### Troubleshooting
 
-### Common Issues
+#### Common Issues
 
 1. **Database Connection Problems**
    - Ensure PostgreSQL is running and verify the `DATABASE_URL`.
@@ -189,11 +189,11 @@ NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
    - Verify your environment variables, especially those related to authentication and email settings.
    - Clear browser cookies and try again if login issues occur.
 
-## Support and Community
+### Support and Community
 
 -  [GitHub Repository](https://github.com/Its-Satyajit/nextjs-template)
 -  [Issue Tracker](https://github.com/Its-Satyajit/nextjs-template/issues)
 
-## License
+### License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/Its-Satyajit/nextjs-template/blob/main/LICENSE.md) file for more details.
