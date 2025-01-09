@@ -1,7 +1,7 @@
-# Next.js Template with TypeScript, Tailwind CSS, PostgreSQL, Drizzle ORM, and Better Auth for Scalable Web Applications
+# Next.js Template with TypeScript, Tailwind CSS, Shadcn/Ui, PostgreSQL, Drizzle ORM, and Better Auth for Scalable Web Applications
 
 ## Overview
-This Next.js template provides a robust foundation for building modern, scalable, and high-performance web applications. It integrates powerful tools like React, TypeScript, Tailwind CSS, PostgreSQL, Drizzle ORM, and Better Auth to help developers create efficient, maintainable, and secure applications with ease.
+This Next.js template provides a robust foundation for building modern, scalable, and high-performance web applications. It integrates powerful tools like React, TypeScript, Tailwind CSS, Shadcn/Ui, PostgreSQL, Drizzle ORM, and Better Auth to help developers create efficient, maintainable, and secure applications with ease.
 
 ## Table of Contents
 - [Core Technologies](#core-technologies)
