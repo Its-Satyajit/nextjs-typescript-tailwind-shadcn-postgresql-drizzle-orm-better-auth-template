@@ -1,9 +1,9 @@
-# Next.js Template Documentation
+## Next.js Template with TypeScript, Tailwind CSS, Shadcn/Ui, PostgreSQL, Drizzle ORM, and Better Auth.
 
-## Overview
-This Next.js template provides a comprehensive foundation for building efficient, scalable, and modern web applications. It integrates powerful technologies such as Next.js, TypeScript, React, and Tailwind CSS to ensure high performance, developer productivity, and ease of maintenance.
+### Overview
+This Next.js template gives you a solid platform for creating modern, scalable, and high-performance web apps. It includes strong tools such as React, TypeScript, Tailwind CSS, Shadcn/Ui, PostgreSQL, Drizzle ORM, and Better Auth to assist developers in creating efficient, maintainable, and secure apps with ease.
 
-## Table of Contents
+### Table of Contents
 - [Core Technologies](#core-technologies)
 - [Key Packages & Integrations](#key-packages-integrations)
 - [Development Tools](#development-tools)
@@ -18,34 +18,34 @@ This Next.js template provides a comprehensive foundation for building efficient
 - [Support and Community](#support-and-community)
 - [License](#license)
 
-## Core Technologies
+### Core Technologies
 
-- **[Next.js](https://nextjs.org/)**: A leading React framework for building fast and optimized web applications with features such as server-side rendering (SSR) and static site generation (SSG).
-- **[TypeScript](https://www.typescriptlang.org/)**: A statically typed superset of JavaScript that provides better tooling, error-checking, and maintainability.
-- **[React](https://reactjs.org/)**: A popular JavaScript library for building interactive user interfaces, known for its performance and component-based architecture.
-- **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework that simplifies responsive design and helps create modern, custom user interfaces.
-- **[Better Auth](https://www.better-auth.com//)**: The most comprehensive authentication framework for TypeScript.
+- **[Next.js](https://nextjs.org/)**: Next.js is a powerful React framework for creating fast, SEO-friendly, and optimised online applications. It includes server-side rendering (SSR) and static site generation (SSG) by default.
+- **[TypeScript](https://www.typescriptlang.org/)**: TypeScript improves JavaScript by introducing static types, enhancing tools, and detecting problems early on, making code easier to maintain.
+- **[React](https://reactjs.org/)**: A popular library for creating dynamic user interfaces. React's component-based structure increases reusability and simplifies development.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Tailwind is a utility-first CSS framework that makes responsive design easier and speeds up the process of making current web apps that look good.
+- **[Better Auth](https://www.better-auth.com//)**: This is a complete authentication solution for TypeScript that makes web apps safe and scalable.
   
-## Key Packages & Integrations
+### Key Packages & Integrations
 
-- **[Drizzle ORM](https://orm.drizzle.team)**: A modern, type-safe Object-Relational Mapping (ORM) library for managing database interactions seamlessly.
-- **[React Query](https://tanstack.com/query)**: A library for fetching, caching, and synchronizing server data in React applications.
-- **[PostgreSQL](https://www.postgresql.org/)**: An advanced, open-source relational database system that ensures data integrity and scalability.
+- **[Drizzle ORM](https://orm.drizzle.team)**: Drizzle ORM is a modern, type-safe Object-Relational Mapping (ORM) library that makes it easier to work with databases by cutting down on repetitive code and mistakes.
+- **[React Query](https://tanstack.com/query)**: A robust library for requesting, caching, and synchronising data in React, which improves efficiency and consistency.
+- **[PostgreSQL](https://www.postgresql.org/)**: PostgreSQL is a cutting-edge, open-source relational database system noted for its production-grade stability, data integrity, and scalability.
 
-## Development Tools
+### Development Tools
 
-- **[pnpm](https://pnpm.io/)**: A fast, disk-space-efficient package manager for JavaScript and TypeScript projects.
-- **[ESLint](https://eslint.org/)**: A widely-used linting tool for identifying and fixing issues in JavaScript and TypeScript code.
-- **[Prettier](https://prettier.io/)**: A code formatter that helps maintain code style consistency and improves readability.
+- **[pnpm](https://pnpm.io/)**: A fast, disk-efficient package manager for large JavaScript and TypeScript applications that speeds up installation and improves dependency management.
+- **[ESLint](https://eslint.org/)**: A tool for detecting and resolving issues in JavaScript/TypeScript code, maintaining code quality and consistency.
+- **[Prettier](https://prettier.io/)**: An automatic code formatter that assists developers in maintaining a consistent code style, boosting readability, and minimising formatting errors.
 
 ---
 [![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)[![TypeScript](https://img.shields.io/badge/TypeScript_5-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)[![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)[![Drizzle ORM](https://img.shields.io/badge/Drizzle_ORM-C5F74F?style=for-the-badge&logo=database&logoColor=black)](https://orm.drizzle.team)[![React Query](https://img.shields.io/badge/React_Query_5-FF4154?style=for-the-badge&logo=reactquery&logoColor=white)](https://tanstack.com/query)[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)[![Radix UI](https://img.shields.io/badge/Radix_UI-161618?style=for-the-badge&logo=radixui&logoColor=white)](https://www.radix-ui.com/)[![Better Auth](https://img.shields.io/badge/Better_Auth-5E35CA?style=for-the-badge&logo=better_auth0&logoColor=white)](https://www.better-auth.com/)[![shadcn/ui](https://img.shields.io/badge/shadcn/ui-000000?style=for-the-badge&logo=shadcn/ui&logoColor=white)](https://ui.shadcn.com/)[![pnpm](https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](https://pnpm.io/)[![ESLint](https://img.shields.io/badge/ESLint_9-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)[![Prettier](https://img.shields.io/badge/Prettier_3-F7B93E?style=for-the-badge&logo=prettier&logoColor=black)](https://prettier.io/)[![Winston](https://img.shields.io/badge/Winston_3-231F20?style=for-the-badge&logo=winston&logoColor=white)](https://github.com/winstonjs/winston)[![React Compiler](https://img.shields.io/badge/React_Compiler_19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://www.npmjs.com/package/babel-plugin-react-compiler)[![TypeScript](https://img.shields.io/badge/Strict_TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)[![React Hook Form](https://img.shields.io/badge/React_Hook_Form-EC5990?style=for-the-badge&logo=reacthookform&logoColor=white)](https://react-hook-form.com/)[![Zod](https://img.shields.io/badge/Zod_3-3E67B1?style=for-the-badge&logo=zod&logoColor=white)](https://zod.dev/)
 
 ---
 
-## Project Setup
+### Project Setup
 
-### Prerequisites
+#### Prerequisites
 
 Before getting started, make sure that you have the following tools installed on your system:
 
@@ -53,7 +53,7 @@ Before getting started, make sure that you have the following tools installed on
 - **pnpm 9+**
 - **PostgreSQL 16+**
 
-### Installation Instructions
+#### Installation Instructions
 
 Follow these steps to set up the project:
 
@@ -81,7 +81,7 @@ Follow these steps to set up the project:
    ```
 Your application will be available at `http://localhost:3000`.
 
-## Project Structure
+### Project Structure
 
 ```bash
 nextjs-template/
@@ -103,22 +103,20 @@ nextjs-template/
 └── [configuration files]     # Various config files
 ```
 
-## Key Features
+### Key Features
 
-### Authentication and Authorization
-- Full authentication flow using **Better Auth**.
-- Built-in **email verification**, **password reset**, and **role-based access control** (Admin/User).
-- Middleware to protect routes and ensure data privacy.
+#### Authentication and Authorization
+- A complete **authentication flow** with **Better Auth** for secure user login and session management.
+- Integrated **email verification**, **password reset**, and **role-based access control** (Admin/User).
+- Middleware for route protection and limiting sensitive data access to authorised users.
 
-### Database Integration
-- Type-safe interactions with the database using **Drizzle ORM**.
-- Full support for **PostgreSQL** with automatic migration management and schema versioning.
+#### Database Integration
+- **Type-safe database interactions** with **Drizzle ORM** to prevent errors and assure efficient queries.
+- Complete PostgreSQL integration, including **automatic migrations** and **schema versioning** for more efficient database management.
 
-### UI and Responsive Design
-- Build accessible user interfaces using **Radix UI** and **shadcn/ui**.
-- Fully responsive designs powered by **Tailwind CSS**, with support for **dark mode** and custom themes.
-
-## Available Scripts
+#### UI and Responsive Design
+- Create intuitive and accessible **user interfaces** with **Radix UI** and **shadcn/ui**.
+- Tailwind CSS is used to create fully **responsive** designs, with support for **dark mode** and bespoke theme management for modern web experiences.
 
 Use the following commands to manage development, database, and quality assurance tasks:
 
@@ -139,16 +137,16 @@ pnpm lint:fix         # Fix linting issues
 pnpm format:write     # Format the codebase
 ```
 
-## Configuration Files
+### Configuration Files
 
 Key configuration files for managing project settings:
 
-- `next.config.ts` - Configuration for **Next.js**.
-- `drizzle.config.ts` - Database settings for **Drizzle ORM**.
-- `tailwind.config.ts` - Tailwind CSS configuration for styling.
-- `eslint.config.mjs` - Linting rules for **ESLint**.
+- `next.config.ts` - Next.js configuration for routing and optimization.
+- `drizzle.config.ts` - Configuration for **Drizzle ORM** and database interactions.
+- `tailwind.config.ts` - Tailwind CSS setup for custom styling.
+- `eslint.config.mjs` - ESLint configuration for consistent code quality.
 
-## Environment Variables
+### Environment Variables
 
 Make sure to set the following environment variables in the `.env` file:
 
@@ -173,9 +171,9 @@ GITHUB_CLIENT_SECRET=secret
 NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
 ```
 
-## Troubleshooting
+### Troubleshooting
 
-### Common Issues
+#### Common Issues
 
 1. **Database Connection Problems**
    - Ensure PostgreSQL is running and verify the `DATABASE_URL`.
@@ -190,11 +188,11 @@ NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
    - Verify your environment variables, especially those related to authentication and email settings.
    - Clear browser cookies and try again if login issues occur.
 
-## Support and Community
+### Support and Community
 
 -  [GitHub Repository](https://github.com/Its-Satyajit/nextjs-template)
 -  [Issue Tracker](https://github.com/Its-Satyajit/nextjs-template/issues)
 
-## License
+### License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/Its-Satyajit/nextjs-template/blob/main/LICENSE.md) file for more details.
