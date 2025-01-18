@@ -58,7 +58,7 @@ importers:
         version: 0.1.20
       drizzle-orm:
         specifier: ^0.38.3
-        version: 0.38.3(@types/react@19.0.7)(kysely@0.27.5)(postgres@3.4.5)(react@19.0.0)
+        version: 0.38.4(@types/react@19.0.7)(kysely@0.27.5)(postgres@3.4.5)(react@19.0.0)
       lucide-react:
         specifier: ^0.471.0
         version: 0.471.0(react@19.0.0)
@@ -1631,8 +1631,8 @@ packages:
     resolution: {integrity: sha512-vhdLrxWA32WNVF77NabpSnX7pQBornx64VDQDmKddRonOB2Xe/yY4glQ7rECoa+ogqcQNo7VblLUbeBK6Zn9Ow==}
     hasBin: true
 
-  drizzle-orm@0.38.3:
-    resolution: {integrity: sha512-w41Y+PquMpSff/QDRGdItG0/aWca+/J3Sda9PPGkTxBtjWQvgU1jxlFBXdjog5tYvTu58uvi3PwR1NuCx0KeZg==}
+  drizzle-orm@0.38.4:
+    resolution: {integrity: sha512-s7/5BpLKO+WJRHspvpqTydxFob8i1vo2rEx4pY6TGY7QSMuUfWUuzaY0DIpXCkgHOo37BaFC+SJQb99dDUXT3Q==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=4'
@@ -4619,7 +4619,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.38.3(@types/react@19.0.7)(kysely@0.27.5)(postgres@3.4.5)(react@19.0.0):
+  drizzle-orm@0.38.4(@types/react@19.0.7)(kysely@0.27.5)(postgres@3.4.5)(react@19.0.0):
     optionalDependencies:
       '@types/react': 19.0.7
       kysely: 0.27.5
