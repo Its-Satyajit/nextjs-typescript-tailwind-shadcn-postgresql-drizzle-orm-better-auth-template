@@ -46,7 +46,7 @@ importers:
         version: 5.66.0(@tanstack/react-query@5.66.0(react@19.0.0))(react@19.0.0)
       better-auth:
         specifier: ^1.1.14
-        version: 1.1.16
+        version: 1.1.18
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -730,8 +730,8 @@ packages:
   '@jsr/its-satyajit__id-generator@0.2.1':
     resolution: {integrity: sha512-1EE08U4aYuhnEbr0XE9lVzWRpmOuRI0ZZCVyQ5RknIpuN3ef0JJhDZg01hG+LRQyaKPXM3tVJw3Ex7EMILQ9wg==, tarball: https://npm.jsr.io/~/11/@jsr/its-satyajit__id-generator/0.2.1.tgz}
 
-  '@levischuck/tiny-cbor@0.2.8':
-    resolution: {integrity: sha512-Es+ajyTgqHREY9Fch5xPnZIDiTqgZc3dH3XU1/YWn8UsaOD8G8zhyhDib/UYgx31manKa7ZszKaLtcHKcGNchA==}
+  '@levischuck/tiny-cbor@0.2.11':
+    resolution: {integrity: sha512-llBRm4dT4Z89aRsm6u2oEZ8tfwL/2l6BwpZ7JcyieouniDECM5AqNgr/y08zalEIvW3RSK4upYyybDcmjXqAow==}
 
   '@next/env@15.1.6':
     resolution: {integrity: sha512-d9AFQVPEYNr+aqokIiPLNK/MTyt3DWa/dpKveiAaVccUadFbhFEvY6FXYX2LJO2Hv7PHnLBu2oWwB4uBuHjr/w==}
@@ -1441,8 +1441,8 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  better-auth@1.1.16:
-    resolution: {integrity: sha512-Xc5pxafKZw4QVU8WYfkV2z4Hd8KCXXbphrgOpe2gA/EfanysLBhE1G/F7cEi5e0bW2pGR+vw6gf0ARHA7VFihg==}
+  better-auth@1.1.18:
+    resolution: {integrity: sha512-cU/u7/qlSiR/OO1O53gh/bHvxyB53DE+5ZOw9DtpDI8IyIQUBqDnQ06MOwNtj8JwjXHcMFNSNd5u/W8DED0bJw==}
 
   better-call@0.3.3:
     resolution: {integrity: sha512-N4lDVm0NGmFfDJ0XMQ4O83Zm/3dPlvIQdxvwvgSLSkjFX5PM4GUYSVAuxNzXN27QZMHDkrJTWUqxBrm4tPC3eA==}
@@ -2475,8 +2475,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nanostores@0.11.3:
-    resolution: {integrity: sha512-TUes3xKIX33re4QzdxwZ6tdbodjmn3tWXCEc1uokiEmo14sI1EaGYNs2k3bU2pyyGNmBqFGAVl6jAGWd06AVIg==}
+  nanostores@0.11.4:
+    resolution: {integrity: sha512-k1oiVNN4hDK8NcNERSZLQiMfRzEGtfnvZvdBvey3SQbgn8Dcrk0h1I6vpxApjb10PFUflZrgJ2WEZyJQ+5v7YQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
 
   natural-compare@1.4.0:
@@ -3712,7 +3712,7 @@ snapshots:
 
   '@jsr/its-satyajit__id-generator@0.2.1': {}
 
-  '@levischuck/tiny-cbor@0.2.8': {}
+  '@levischuck/tiny-cbor@0.2.11': {}
 
   '@next/env@15.1.6': {}
 
@@ -4101,7 +4101,7 @@ snapshots:
   '@simplewebauthn/server@13.1.1':
     dependencies:
       '@hexagon/base64': 1.1.28
-      '@levischuck/tiny-cbor': 0.2.8
+      '@levischuck/tiny-cbor': 0.2.11
       '@peculiar/asn1-android': 2.3.15
       '@peculiar/asn1-ecc': 2.3.15
       '@peculiar/asn1-rsa': 2.3.15
@@ -4435,7 +4435,7 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  better-auth@1.1.16:
+  better-auth@1.1.18:
     dependencies:
       '@better-auth/utils': 0.2.3
       '@better-fetch/fetch': 1.1.12
@@ -4447,7 +4447,7 @@ snapshots:
       defu: 6.1.4
       jose: 5.9.6
       kysely: 0.27.5
-      nanostores: 0.11.3
+      nanostores: 0.11.4
       zod: 3.24.1
 
   better-call@0.3.3:
@@ -5609,7 +5609,7 @@ snapshots:
 
   nanoid@3.3.8: {}
 
-  nanostores@0.11.3: {}
+  nanostores@0.11.4: {}
 
   natural-compare@1.4.0: {}
 
