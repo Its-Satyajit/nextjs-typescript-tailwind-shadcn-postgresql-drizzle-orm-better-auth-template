@@ -21,7 +21,7 @@ export default function Header() {
   const router = useRouter();
   const { data: session } = useSession();
   return (
-    <div className="sticky top-0 z-50 bg-white/75 shadow backdrop-blur">
+    <div className="sticky top-0 z-50 bg-white/75 shadow-sm backdrop-blur-sm">
       <div className="container mx-auto flex h-12 items-center justify-between">
         <Home.Link>
           <Logo className="h-full w-auto py-3" />
