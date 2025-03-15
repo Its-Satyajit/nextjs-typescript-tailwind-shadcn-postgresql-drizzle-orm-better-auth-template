@@ -80,7 +80,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.0.12",
-    "typedoc": "^0.27.9",
+    "typedoc": "^0.28.0",
     "typedoc-github-theme": "^0.2.1",
     "typedoc-plugin-markdown": "^4.4.2",
     "typescript": "^5.8.2"
