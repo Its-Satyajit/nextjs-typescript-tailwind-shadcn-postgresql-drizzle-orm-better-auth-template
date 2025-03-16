@@ -2,6 +2,11 @@
 
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+
+import { AuthForgotPassword, Home } from "@/routes";
+import type { ErrorContext } from "@better-fetch/fetch";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import { toast } from "sonner";
 import type { z } from "zod";
 
@@ -17,12 +22,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { signIn } from "@/lib/auth-client";
-import { AuthForgotPassword, Home } from "@/routes";
-import { signInSchema } from "@/zod/zod";
-import type { ErrorContext } from "@better-fetch/fetch";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { SiGithub } from "@icons-pack/react-simple-icons";
+
+import { signIn } from "@/lib/auth/auth-client";
+import { signInSchema } from "@/lib/auth/schema";
 
 export default function SignIn() {
   const router = useRouter();

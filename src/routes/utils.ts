@@ -26,6 +26,7 @@ function processSchema(
       const shape = (schema as z.ZodObject<z.ZodRawShape>).shape;
       return parseShape(shape, paramsArray);
     }
+
     case z.ZodUnion: {
       const options = (
         schema as z.ZodUnion<

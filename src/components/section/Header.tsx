@@ -2,6 +2,8 @@
 
 import { useRouter } from "next/navigation";
 
+import { AuthSignIn, AuthSignUp, DashboardAdmin, Home } from "@/routes";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,8 +12,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { signOut, useSession } from "@/lib/auth-client";
-import { AuthSignIn, AuthSignUp, DashboardAdmin, Home } from "@/routes";
+
+import { signOut, useSession } from "@/lib/auth/auth-client";
 
 import Logo from "../custom/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
@@ -32,7 +34,10 @@ export default function Header() {
               <DropdownMenu>
                 <DropdownMenuTrigger>
                   <Avatar>
-                    <AvatarImage src="/images/77627641.jpg" alt="@shadcn" />
+                    <AvatarImage
+                      src="/images/77627641.jpg"
+                      alt="@its-Satyajit"
+                    />
                     <AvatarFallback>Its-Satyajit</AvatarFallback>
                   </Avatar>
                 </DropdownMenuTrigger>

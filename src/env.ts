@@ -1,6 +1,5 @@
-import { z } from "zod";
-
 import { createEnv } from "@t3-oss/env-nextjs";
+import { z } from "zod";
 
 const env = createEnv({
   /**
@@ -12,7 +11,7 @@ const env = createEnv({
     DATABASE_URL: z.string(),
     BETTER_AUTH_SECRET: z.string(),
     BETTER_AUTH_URL: z.string(),
-
+    SKIP_BUILD_CHECKS: z.string(),
     MAIL_HOST: z.string(),
     MAIL_USERNAME: z.string(),
     MAIL_PASSWORD: z.string(),
@@ -37,6 +36,7 @@ const env = createEnv({
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
+    SKIP_BUILD_CHECKS: process.env.SKIP_BUILD_CHECKS,
     BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,

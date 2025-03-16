@@ -1,4 +1,4 @@
-exclude: 
+exclude:
   - dev
   - main
   - dev*

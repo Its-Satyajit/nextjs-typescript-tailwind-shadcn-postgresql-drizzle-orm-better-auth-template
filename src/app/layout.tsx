@@ -1,14 +1,13 @@
-import "@/styles/globals.css";
-
 import type { Metadata } from "next";
+
+import env from "@/env";
+import "@/styles";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import ReactQueryProvider from "@/components/providers/ReactQuery";
 import Footer from "@/components/section/Footer";
 import Header from "@/components/section/Header";
 import { Toaster } from "@/components/ui/sonner";
-import env from "@/env";
-import { R, RI } from "@/styles/Fonts";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,13 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${R.variable} ${RI.variable} scroll-smooth font-raleway antialiased`}
-      >
+      <body className="scroll-smooth antialiased">
         <ReactQueryProvider>
           <div className="grid h-screen grid-rows-[auto_1fr_auto]">
             <Header />
-            <div className="container prose-base mx-auto py-3">{children}</div>
+            <div className="prose-base container mx-auto py-3">{children}</div>
             <Footer />
           </div>
           {env.NODE_ENV === "development" ? <ReactQueryDevtools /> : null}

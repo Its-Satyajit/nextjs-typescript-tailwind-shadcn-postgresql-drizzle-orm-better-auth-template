@@ -1,9 +1,12 @@
 "use client";
 
-import { Suspense, useState } from "react";
-
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useState } from "react";
 import { useForm } from "react-hook-form";
+
+import { AuthSignIn } from "@/routes";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
 import type { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -17,15 +20,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
-import { resetPassword } from "@/lib/auth-client";
-import { AuthSignIn } from "@/routes";
-import { resetPasswordSchema } from "@/zod/zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+
+import { resetPassword } from "@/lib/auth/auth-client";
+import { resetPasswordSchema } from "@/lib/auth/schema";
 
 function ResetPasswordContent() {
   const router = useRouter();
-  const { toast } = useToast();
+
   const searchParams = useSearchParams();
   const error = searchParams.get("error");
   const [isPending, setIsPending] = useState(false);
@@ -44,16 +45,9 @@ function ResetPasswordContent() {
       newPassword: data.password,
     });
     if (error) {
-      toast({
-        title: "Error",
-        description: error.message,
-        variant: "destructive",
-      });
+      toast(error.message);
     } else {
-      toast({
-        title: "Success",
-        description: "Password reset successful. Login to continue.",
-      });
+      toast("Password reset successful. Login to continue.");
       router.push(AuthSignIn());
     }
     setIsPending(false);

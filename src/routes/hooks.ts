@@ -1,16 +1,16 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/unbound-method */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   useParams as useNextParams,
-  useRouter,
   useSearchParams as useNextSearchParams,
+  useRouter,
 } from "next/navigation";
+
 import { z } from "zod";
 
 import type { RouteBuilder } from "./makeRoute";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const emptySchema = z.object({});
 
 type PushOptions = Parameters<ReturnType<typeof useRouter>["push"]>[1];
@@ -46,7 +46,7 @@ export function useSearchParams<
   Params extends z.ZodSchema,
   Search extends z.ZodSchema = typeof emptySchema,
 >(builder: RouteBuilder<Params, Search>): z.output<Search> {
-  const res = builder.searchSchema!.safeParse(
+  const res = builder.searchSchema.safeParse(
     convertURLSearchParamsToObject(useNextSearchParams()),
   );
   if (!res.success) {

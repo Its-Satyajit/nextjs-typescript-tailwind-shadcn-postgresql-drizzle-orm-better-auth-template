@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
-
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+
+import { AuthSignIn, Home } from "@/routes";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import type { z } from "zod";
 
@@ -18,10 +20,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { signUp } from "@/lib/auth-client";
-import { AuthSignIn, Home } from "@/routes";
-import { signUpSchema } from "@/zod/zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+
+import { signUp } from "@/lib/auth/auth-client";
+import { signUpSchema } from "@/lib/auth/schema";
 
 export default function SignUp() {
   const router = useRouter();
