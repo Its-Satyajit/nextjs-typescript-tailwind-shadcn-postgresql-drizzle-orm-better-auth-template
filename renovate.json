@@ -1,0 +1,43 @@
+{
+  "extends": ["config:recommended"],
+  "baseBranches": ["dev"],
+  "packageRules": [
+    {
+      "matchDepTypes": ["dependencies", "devDependencies"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "enabled": true
+    },
+
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true,
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+
+    {
+      "matchDepTypes": ["dependencies"],
+      "automerge": true,
+      "matchUpdateTypes": ["patch"],
+      "stabilityDays": 3
+    },
+
+    {
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": false
+    },
+    {
+      "matchDepTypes": ["dependencies", "devDependencies"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "groupName": "minor-patch-updates",
+      "groupSlug": "minor-patch-updates",
+      "automerge": true
+    }
+  ],
+  "dependencyDashboard": true,
+  "schedule": ["every weekend"],
+  "timezone": "Asia/Kolkata",
+  "branchPrefix": "renovate/",
+  "labels": ["dependencies", "auto-update"]
+}
