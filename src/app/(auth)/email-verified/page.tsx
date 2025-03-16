@@ -1,5 +1,6 @@
-import { buttonVariants } from "@/components/ui/button";
 import { Home } from "@/routes";
+
+import { buttonVariants } from "@/components/ui/button";
 
 export default async function EmailVerifiedPage() {
   return (

@@ -2,8 +2,9 @@
 
 import { useRouter } from "next/navigation";
 
-import { signOut } from "@/lib/auth-client";
 import { Home } from "@/routes";
+
+import { signOut } from "@/lib/auth/auth-client";
 
 import { Button } from "../ui/button";
 

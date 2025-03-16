@@ -1,22 +1,13 @@
 {
-  "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#4a4bee",
-    "activityBar.background": "#4a4bee",
-    "activityBar.foreground": "#e7e7e7",
-    "activityBar.inactiveForeground": "#e7e7e799",
-    "activityBarBadge.background": "#f16d6e",
-    "activityBarBadge.foreground": "#15202b",
-    "commandCenter.border": "#e7e7e799",
-    "sash.hoverBorder": "#4a4bee",
-    "statusBar.background": "#1b1dea",
-    "statusBar.foreground": "#e7e7e7",
-    "statusBarItem.hoverBackground": "#4a4bee",
-    "statusBarItem.remoteBackground": "#1b1dea",
-    "statusBarItem.remoteForeground": "#e7e7e7",
-    "titleBar.activeBackground": "#1b1dea",
-    "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#1b1dea99",
-    "titleBar.inactiveForeground": "#e7e7e799"
-  },
-  "peacock.color": "#1b1dea"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": [
+    "elems",
+    "requireds",
+    "Satyajit",
+    "Shadcn",
+    "sonner",
+    "trivago"
+  ],
+  "prettier.configPath": "./prettier.config.mjs",
+  "eslint.useFlatConfig": true
 }

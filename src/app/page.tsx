@@ -1,9 +1,9 @@
+import Link from "next/link";
 import React from "react";
 
-import Link from "next/link";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 
 import { Button } from "@/components/ui/button";
-import { SiGithub } from "@icons-pack/react-simple-icons";
 
 const TechBadge = ({ label }: { label: string }) => (
   <div className="rounded-full bg-zinc-50 px-4 py-2 text-sm text-zinc-600 transition-colors hover:bg-zinc-100">
@@ -23,10 +23,10 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Main content */}
       <div className="container mx-auto max-w-5xl px-4">
-        <main className="pb-20 pt-32">
+        <main className="pt-32 pb-20">
           {/* Hero */}
           <div className="max-w-3xl space-y-8">
-            <h1 className="text-4xl font-light leading-tight text-black sm:text-5xl">
+            <h1 className="text-4xl leading-tight font-light text-black sm:text-5xl">
               <span className="text-6xl font-semibold uppercase">
                 Supercharge
               </span>{" "}
@@ -64,7 +64,7 @@ export default function Home() {
           <div className="mt-32 space-y-20">
             {Object.entries(technologies).map(([category, techs]) => (
               <section key={category} className="space-y-6">
-                <h2 className="text-sm font-medium uppercase tracking-wider text-zinc-400">
+                <h2 className="text-sm font-medium tracking-wider text-zinc-400 uppercase">
                   {category.charAt(0).toUpperCase() + category.slice(1)}
                 </h2>
                 <div className="flex flex-wrap gap-3">
@@ -78,7 +78,7 @@ export default function Home() {
 
           {/* Features */}
           <section className="mt-32">
-            <h2 className="mb-12 text-sm font-medium uppercase tracking-wider text-zinc-400">
+            <h2 className="mb-12 text-sm font-medium tracking-wider text-zinc-400 uppercase">
               Key Features
             </h2>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

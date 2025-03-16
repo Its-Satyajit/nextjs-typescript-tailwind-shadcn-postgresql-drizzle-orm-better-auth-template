@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-
-// import LoadingButton from "@/components/loading-button";
 import { useForm } from "react-hook-form";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
 import type { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -17,13 +18,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
-import { forgetPassword } from "@/lib/auth-client";
-import { forgotPasswordSchema } from "@/zod/zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+
+import { forgetPassword } from "@/lib/auth/auth-client";
+import { forgotPasswordSchema } from "@/lib/auth/schema";
 
 export default function ForgotPassword() {
-  const { toast } = useToast();
   const [isPending, setIsPending] = useState(false);
 
   const form = useForm<z.infer<typeof forgotPasswordSchema>>({
@@ -42,17 +41,11 @@ export default function ForgotPassword() {
     });
 
     if (error) {
-      toast({
-        title: "Error",
-        description: error.message,
-        variant: "destructive",
-      });
+      toast.error(error.message);
     } else {
-      toast({
-        title: "Success",
-        description:
-          "If an account exists with this email, you will receive a password reset link.",
-      });
+      toast(
+        "If an account exists with this email, you will receive a password reset link.",
+      );
     }
     setIsPending(false);
   };

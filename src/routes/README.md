@@ -10,9 +10,9 @@ In NextJS applications, Declarative Routes also handles API routes, so you'll ha
 
 Here are the routes of the application:
 
-| Route | Verb | Route Name | Using It |
-| ----- | ---- | ---- | ---- |
-| `/` | - | `Home` | `<Home.Link>` |
+| Route | Verb | Route Name | Using It      |
+| ----- | ---- | ---------- | ------------- |
+| `/`   | -    | `Home`     | `<Home.Link>` |
 
 To use the routes, you can import them from `@/routes` and use them in your code.
 
@@ -51,9 +51,9 @@ This is the equivalent of doing `fetch('/api/product/abc123')` but with typesafe
 
 The system provides three typed hooks to use in your application `usePush`, `useParams`, and `useSearchParams`.
 
-* `usePush` wraps the NextJS `useRouter` hook and returns a typed version of the `push` function.
-* `useParams` wraps `useNextParams` and returns the typed parameters for the route.
-* `useSearchParams` wraps `useNextSearchParams` and returns the typed search parameters for the route.
+- `usePush` wraps the NextJS `useRouter` hook and returns a typed version of the `push` function.
+- `useParams` wraps `useNextParams` and returns the typed parameters for the route.
+- `useSearchParams` wraps `useNextSearchParams` and returns the typed search parameters for the route.
 
 For each hook you give the route to get the appropriate data back.
 
@@ -101,7 +101,7 @@ Post setup there are some additional tasks that you need to complete to complete
 
 - [ ] `/page.info.ts`: Add search typing to if the page supports search paramaters
 - [ ] Convert `Link` components for `/` to `<Home.Link>`
-Once you've got that done you can remove this section.
+      Once you've got that done you can remove this section.
 
 # Why is `makeRoute` copied into the `@/routes` module?
 

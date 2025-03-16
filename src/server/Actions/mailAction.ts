@@ -1,10 +1,10 @@
 "use server";
+
 import "server-only";
 
+import env from "@/env";
 import nodemailer from "nodemailer";
 import winston from "winston";
-
-import env from "@/env";
 
 const logger = winston.createLogger({
   level: "debug",

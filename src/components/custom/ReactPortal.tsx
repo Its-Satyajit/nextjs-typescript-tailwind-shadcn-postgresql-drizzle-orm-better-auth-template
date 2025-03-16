@@ -1,8 +1,9 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-import { id } from "@its-satyajit/id-generator";
+
 
 function createWrapperAndAppendToBody(wrapperId: string): HTMLElement {
   const wrapperElement = document.createElement("div");
@@ -18,7 +19,7 @@ interface ReactPortalProps {
 
 const ReactPortal: React.FC<ReactPortalProps> = ({
   children,
-  wrapperId = id.shortUuidV7(),
+  wrapperId = crypto.randomUUID(),
 }) => {
   const [wrapperElement, setWrapperElement] = useState<HTMLElement | null>(
     null,
