@@ -78,7 +78,7 @@
     "@typescript-eslint/parser": "^8.26.1",
     "drizzle-kit": "^0.30.5",
     "eslint": "^9.22.0",
-    "eslint-config-next": "15.2.3",
+    "eslint-config-next": "15.2.4",
     "eslint-plugin-react-hooks": "^5.2.0",
     "prettier": "^3.5.3",
     "prettier-plugin-organize-attributes": "^1.0.0",
