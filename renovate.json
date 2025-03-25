@@ -1,43 +1,73 @@
 {
-  "extends": ["config:recommended"],
-  "baseBranches": ["dev"],
+  "extends": [
+    "config:recommended"
+  ],
+  "baseBranches": [
+    "dev"
+  ],
   "packageRules": [
     {
-      "matchDepTypes": ["dependencies", "devDependencies"],
-      "matchUpdateTypes": ["major"],
+      "matchDepTypes": [
+        "dependencies",
+        "devDependencies"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "automerge": false,
       "enabled": true
     },
-
     {
-      "matchDepTypes": ["devDependencies"],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
       "automerge": true,
-      "matchUpdateTypes": ["minor", "patch"]
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
     },
-
     {
-      "matchDepTypes": ["dependencies"],
+      "matchDepTypes": [
+        "dependencies"
+      ],
       "automerge": true,
-      "matchUpdateTypes": ["patch"],
-      "stabilityDays": 3
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "minimumReleaseAge": "3 days"
     },
-
     {
-      "matchDepTypes": ["dependencies"],
-      "matchUpdateTypes": ["minor"],
+      "matchDepTypes": [
+        "dependencies"
+      ],
+      "matchUpdateTypes": [
+        "minor"
+      ],
       "automerge": false
     },
     {
-      "matchDepTypes": ["dependencies", "devDependencies"],
-      "matchUpdateTypes": ["patch", "minor"],
+      "matchDepTypes": [
+        "dependencies",
+        "devDependencies"
+      ],
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
       "groupName": "minor-patch-updates",
       "groupSlug": "minor-patch-updates",
       "automerge": true
     }
   ],
   "dependencyDashboard": true,
-  "schedule": ["every weekend"],
+  "schedule": [
+    "every weekend"
+  ],
   "timezone": "Asia/Kolkata",
   "branchPrefix": "renovate/",
-  "labels": ["dependencies", "auto-update"]
+  "labels": [
+    "dependencies",
+    "auto-update"
+  ]
 }
